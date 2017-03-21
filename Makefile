@@ -8,7 +8,7 @@ INC_DIR = includes
 OBJ_DIR = objs
 OBJ_DIRS = $(OBJ_DIR)
 
-CFLAGS = -Wall -Werror -Wextra -MMD -O2
+CFLAGS = -Wall -Werror -Wextra -Weverything -MMD -O2
 
 # BEGIN FT_ERROR
 FT_ERROR_DIR = ft_error
@@ -28,6 +28,15 @@ FT_ERROR_SRCS += $(addprefix $(FT_ERROR_ERROR_DEF_DIR)/, $(FT_ERROR_ERROR_DEF_SR
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ERROR_DIRS))
 SRCS += $(addprefix $(FT_ERROR_DIR)/, $(FT_ERROR_SRCS))
 # END FT_ERROR
+
+# BEGIN FT_CSTRING
+FT_CSTRING_DIR = ft_cstring
+FT_CSTRING_SRCS = \
+	ft_strlen.c		ft_strcpy.c		ft_strchr.c
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_CSTRING_DIR))
+SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
+# END FT_CSTRING
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)

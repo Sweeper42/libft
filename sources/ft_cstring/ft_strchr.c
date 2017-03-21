@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_bad_alloc.c                               :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 15:58:29 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 16:59:15 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 16:46:32 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 17:09:48 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_error.h"
+#include "ft_cstring.h"
 
-static t_error_c	g_error_bad_alloc__ =
+inline char			*ft_strchr(
+						char *s,
+						int c)
 {
-	FT_ERROR_BAD_ALLOC,
-	"Bad alloc."
-};
+	size_t	i;
 
-t_error_c			*ft_error_bad_alloc(void)
-{
-	return (&g_error_bad_alloc__);
+	if ((char)c == '\0')
+		return ((s + ft_strlen(s)));
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((s + i));
+		i++;
+	}
+	return (NULL);
 }
