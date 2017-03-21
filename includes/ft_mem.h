@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:12:11 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 17:37:21 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/21 17:50:05 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ extern void		*ft_memcpy(
 extern void		*ft_memdup(
 					void const	*src,
 					size_t		n);
-extern char		*ft_strndup(
-					char const *src,
-					size_t n);
+
 #endif
