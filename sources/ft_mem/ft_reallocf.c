@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdup.c                                        :+:      :+:    :+:   */
+/*   ft_reallocf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 17:24:10 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 18:18:50 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 18:23:43 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 18:25:33 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_mem.h"
 
-void			*ft_memdup(
-					void const *src,
-					size_t n)
+inline void		*ft_reallocf(
+					void **mem_addr,
+					size_t old_size,
+					size_t new_size)
 {
-	void		*new;
-
-	if (!(new = (void *)malloc(sizeof(char) * n)))
-		return (NULL);
-	return (ft_memcpy(new, src, n));
+	if (!ft_realloc(mem_addr, old_size, new_size))
+		ft_memdel(mem_addr);
+	return (*mem_addr);
 }

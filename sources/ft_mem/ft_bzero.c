@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdup.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 17:24:10 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 18:18:50 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 18:13:40 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 18:14:54 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_mem.h"
 
-void			*ft_memdup(
-					void const *src,
+inline void		*ft_bzero(
+					void *m,
 					size_t n)
 {
-	void		*new;
-
-	if (!(new = (void *)malloc(sizeof(char) * n)))
-		return (NULL);
-	return (ft_memcpy(new, src, n));
+	return (ft_memset(m, 0, n));
 }

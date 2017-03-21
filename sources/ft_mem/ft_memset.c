@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdup.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 17:24:10 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 18:18:50 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 18:15:49 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 18:21:08 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_mem.h"
 
-void			*ft_memdup(
-					void const *src,
+inline void		*ft_memset(
+					void *m,
+					int c,
 					size_t n)
 {
-	void		*new;
+	size_t		i;
 
-	if (!(new = (void *)malloc(sizeof(char) * n)))
-		return (NULL);
-	return (ft_memcpy(new, src, n));
+	i = 0;
+	while (i < n)
+		((unsigned char *)m)[i++] = (unsigned char)c;
+	return (m);
 }

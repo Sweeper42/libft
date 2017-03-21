@@ -43,6 +43,8 @@ SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
 FT_MEM_DIR = ft_mem
 FT_MEM_SRCS = \
 	ft_memchr.c		ft_memcpy.c		ft_memdup.c \
+	ft_memset.c		ft_bzero.c		ft_memdel.c \
+	ft_realloc.c	ft_reallocf.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_MEM_DIR))
 SRCS += $(addprefix $(FT_MEM_DIR)/, $(FT_MEM_SRCS))
