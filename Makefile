@@ -38,6 +38,15 @@ OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_CSTRING_DIR))
 SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
 # END FT_CSTRING
 
+# BEGIN FT_MEM
+FT_MEM_DIR = ft_mem
+FT_MEM_SRCS = \
+	ft_memchr.c		ft_memcpy.c		ft_memdup.c
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_MEM_DIR))
+SRCS += $(addprefix $(FT_MEM_DIR)/, $(FT_MEM_SRCS))
+# END FT_MEM
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
 

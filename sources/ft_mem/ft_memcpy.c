@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:41:58 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 17:27:20 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 17:21:22 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 17:22:53 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cstring.h"
+#include "ft_mem.h"
 
-inline char			*ft_strcpy(
-						char *dst,
-						char const *src)
+inline void		*ft_memcpy(
+					void *dst,
+					void const *src,
+					size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while ((dst[i] = src[i]))
+	while (i < n)
+	{
+		((char *)dst)[i] = ((char const *)src)[i];
 		i++;
+	}
 	return (dst);
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:41:58 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 17:27:20 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 17:24:10 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 17:26:58 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cstring.h"
+#include <stdlib.h>
+#include "ft_mem.h"
 
-inline char			*ft_strcpy(
-						char *dst,
-						char const *src)
+inline void		*ft_memdup(
+					void const *src,
+					size_t n)
 {
-	size_t	i;
+	void		*new;
 
-	i = 0;
-	while ((dst[i] = src[i]))
-		i++;
-	return (dst);
+	if (!(new = (void *)malloc(sizeof(char) * n)))
+		return (NULL);
+	return (ft_memcpy(new, src, n));
 }

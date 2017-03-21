@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:41:58 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 17:27:20 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 17:12:49 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 17:18:10 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cstring.h"
+#include "ft_mem.h"
 
-inline char			*ft_strcpy(
-						char *dst,
-						char const *src)
+inline void		*ft_memchr(
+					void *m,
+					int c,
+					size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while ((dst[i] = src[i]))
+	while (i < n)
+	{
+		if (((unsigned char *)m)[i] == (unsigned char)c)
+			return ((void *)((unsigned char *)m + i));
 		i++;
-	return (dst);
+	}
+	return (NULL);
 }
