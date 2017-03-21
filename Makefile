@@ -50,6 +50,18 @@ OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_MEM_DIR))
 SRCS += $(addprefix $(FT_MEM_DIR)/, $(FT_MEM_SRCS))
 # END FT_MEM
 
+# BEGIN FT_STRING
+FT_STRING_DIR = ft_string
+FT_STRING_DIRS = $(FT_STRING_DIR)
+FT_STRING_SRCS = \
+	ft_string_size.c	ft_string_empty.c	ft_string_c_str.c \
+	ft_string_init.c	ft_string_init2.c	ft_string_init3.c \
+	ft_string_new.c		ft_string_new2.c	ft_string_new3.c
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_STRING_DIRS))
+SRCS += $(addprefix $(FT_STRING_DIR)/, $(FT_STRING_SRCS))
+# END FT_STRING
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
 
