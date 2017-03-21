@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cstring.h                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 15:50:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 17:30:27 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/21 17:31:12 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/21 17:36:53 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CSTRING_H
-# define FT_CSTRING_H
+#include <stdlib.h>
+#include "ft_cstring.h"
+#include "ft_mem.h"
 
-# include <stddef.h>
+inline char		*ft_strndup(
+					char const *src,
+					size_t n)
+{
+	char	*new;
+	size_t	len;
 
-extern size_t		ft_strlen(char const *s);
-
-extern char			*ft_strcpy(
-						char		*dst,
-						char const *src);
-
-extern char			*ft_strdup(char const *src);
-
-extern char			*ft_strchr(
-						char	*s,
-						int		c);
-
-#endif
+	if (n > (len = ft_strlen(src)))
+		n = len;
+	if (!(new = (char *)malloc(sizeof(char) * (n + 1))))
+		return (NULL);
+	new[n] = '\0';
+	return (ft_memcpy((void *)new, (void const *)src, n));
+}

@@ -32,7 +32,8 @@ SRCS += $(addprefix $(FT_ERROR_DIR)/, $(FT_ERROR_SRCS))
 # BEGIN FT_CSTRING
 FT_CSTRING_DIR = ft_cstring
 FT_CSTRING_SRCS = \
-	ft_strlen.c		ft_strcpy.c		ft_strchr.c
+	ft_strlen.c		ft_strcpy.c		ft_strchr.c \
+	ft_strdup.c		ft_strndup.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_CSTRING_DIR))
 SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
@@ -41,7 +42,7 @@ SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
 # BEGIN FT_MEM
 FT_MEM_DIR = ft_mem
 FT_MEM_SRCS = \
-	ft_memchr.c		ft_memcpy.c		ft_memdup.c
+	ft_memchr.c		ft_memcpy.c		ft_memdup.c \
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_MEM_DIR))
 SRCS += $(addprefix $(FT_MEM_DIR)/, $(FT_MEM_SRCS))
