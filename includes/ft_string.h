@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 20:15:19 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:27:21 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_string				*ft_string_init(
 t_string				*ft_string_init2(
 							t_string	*to_init,
 							t_string_c	*src,
-							size_t		n,
+							t_string_pi	part_info,
 							t_error_c	**error_addr);
 t_string				*ft_string_init3(
 							t_string	*to_init,
@@ -58,7 +58,7 @@ extern void				ft_string_clear(t_string *string);
 t_string				*ft_string_new(t_error_c **error_addr);
 t_string				*ft_string_new2(
 							t_string_c	*src,
-							size_t		n,
+							t_string_pi part_info,
 							t_error_c	**error_addr);
 t_string				*ft_string_new3(
 							char const	*src,
@@ -76,7 +76,7 @@ int						ft_string_reserve(
 int						ft_string_cat(
 							t_string *string,
 							t_string_c *src,
-							t_string_pi	*part_info,
+							t_string_pi	part_info,
 							t_error_c **error_addr);
 
 extern t_bool			ft_string_empty(t_string_c *string);
@@ -85,5 +85,10 @@ extern size_t			ft_string_size(t_string_c *string);
 extern char const		*ft_string_c_str(t_string_c *string);
 
 t_error_c				*ft_string_error_out_of_range(void);
+
+int						ft_string_check_part_info__(
+							t_string_c *src,
+							t_string_pi *part_info,
+							t_error_c **error_addr);
 
 #endif
