@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 17:19:36 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 17:58:47 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 # define FT_STRING_GET_MARGIN(X)	((size_t)((X) + 8))
 
 # define FT_STRING_ERROR_OUT_OF_RANGE		FT_ERROR_NEW_ERR_NUM
+
+# define FT_SUB_STRING(start, len)			((t_sub_string){start, len})
+# define FT_SUB_STRING_ALL					FT_SUB_STRING(0, FT_STRING_NPOS)
 
 typedef struct			s_string
 {
@@ -107,7 +110,19 @@ int						ft_string_cat(
 
 extern char const		*ft_string_c_str(t_string_c *string);
 
+int						ft_string_dup(
+							t_string_c	*string,
+							t_string	**target,
+							t_error_c	**error_addr);
+int						ft_string_cpy(
+							t_string_c	*string,
+							t_string	*target,
+							t_error_c	**error_addr);
+
 t_bool					ft_string_equal(
+							t_string_c	*string,
+							t_string_c	*to_compare);
+int						ft_string_cmp(
 							t_string_c	*string,
 							t_string_c	*to_compare);
 
