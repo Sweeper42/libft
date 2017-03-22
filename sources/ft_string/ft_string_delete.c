@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 19:25:36 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 16:48:55 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 17:11:54 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int						ft_string_delete(
 							t_string *string,
 							t_error_c **error_addr)
 {
-	ft_string_clear(string);
+	ft_string_clean(string);
 	free(string);
 	(void)error_addr;
 	return (0);
