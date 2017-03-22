@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 18:05:25 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 18:25:01 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_STRING_H
 
 # include <stddef.h>
+# include <sys/types.h>
 # include "ft_error.h"
 # include "ft_bool.h"
 # include "ft_var_handling.h"
@@ -128,6 +129,15 @@ t_bool					ft_string_equal(
 int						ft_string_cmp(
 							t_string_c	*string,
 							t_string_c	*to_compare);
+
+/*
+**------------------------|          output          |------------------------**
+*/
+
+ssize_t					ft_string_put_fd(
+							t_string_c	*string,
+							int			fd,
+							t_error_c	**error_addr);
 
 /*
 **------------------------|          errors          |------------------------**

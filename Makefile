@@ -61,7 +61,8 @@ FT_STRING_SRCS = \
 	ft_string_clean.c	ft_string_delete.c	ft_string_reserve.c \
 	ft_string_check_sub_string.c		ft_string_cat.c \
 	ft_string_dup.c		ft_string_equal.c	ft_string_cpy.c \
-	ft_string_cmp.c		ft_string_get_handler.c
+	ft_string_cmp.c		ft_string_get_handler.c \
+	ft_string_put_fd.c
 
 #  BEGIN FT_ERROR_ERROR_DEF
 FT_STRING_ERROR_DEF_DIR = error_def
