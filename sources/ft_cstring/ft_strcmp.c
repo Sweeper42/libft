@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:46:32 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 17:25:12 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/22 17:21:58 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/22 17:23:55 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cstring.h"
 
-char		*ft_strchr(
-				char *s,
-				int c)
+inline int		ft_strcmp(
+			char const *s1,
+			char const *s2)
 {
-	size_t	i;
+	size_t		i;
 
-	if ((char)c == '\0')
-		return ((s + ft_strlen(s)));
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((s + i));
+	while (s1[i]
+		&& (s1[i] == s2[i]))
 		i++;
-	}
-	return (NULL);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

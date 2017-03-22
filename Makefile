@@ -33,7 +33,8 @@ SRCS += $(addprefix $(FT_ERROR_DIR)/, $(FT_ERROR_SRCS))
 FT_CSTRING_DIR = ft_cstring
 FT_CSTRING_SRCS = \
 	ft_strlen.c		ft_strcpy.c		ft_strchr.c \
-	ft_strdup.c		ft_strndup.c
+	ft_strdup.c		ft_strndup.c	ft_strcmp.c \
+	ft_strequal.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_CSTRING_DIR))
 SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
@@ -57,7 +58,7 @@ FT_STRING_SRCS = \
 	ft_string_size.c	ft_string_empty.c	ft_string_c_str.c \
 	ft_string_init.c	ft_string_init2.c	ft_string_init3.c \
 	ft_string_new.c		ft_string_new2.c	ft_string_new3.c \
-	ft_string_clear.c	ft_string_delete.c	ft_string_reserve.c \
+	ft_string_clean.c	ft_string_delete.c	ft_string_reserve.c \
 	ft_string_check_sub_string.c		ft_string_cat.c
 
 #  BEGIN FT_ERROR_ERROR_DEF
