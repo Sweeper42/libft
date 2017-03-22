@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 19:07:00 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 19:17:41 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 16:55:52 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ t_string	*ft_string_init3(
 	alloc_size = FT_STRING_GET_MARGIN(n + 1);
 	if (!(to_init->str = malloc(sizeof(char) * alloc_size)))
 	{
-		*error_addr = ft_error_bad_alloc();
+		if (error_addr)
+			*error_addr = ft_error_bad_alloc();
 		return (NULL);
 	}
 	to_init->size = src_size;

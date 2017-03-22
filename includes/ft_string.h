@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 20:27:21 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 16:51:33 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ typedef struct			s_string
 	size_t				alloc_size;
 }						t_string;
 
-typedef struct			s_string_part_info
+typedef struct			s_sub_string
 {
 	size_t				start;
 	size_t				len;
-}						t_string_pi;
+}						t_sub_string;
 
 typedef t_string const	t_string_c;
 
@@ -43,10 +43,10 @@ t_string				*ft_string_init(
 							t_string	*to_init,
 							t_error_c	**error_addr);
 t_string				*ft_string_init2(
-							t_string	*to_init,
-							t_string_c	*src,
-							t_string_pi	part_info,
-							t_error_c	**error_addr);
+							t_string		*to_init,
+							t_string_c		*src,
+							t_sub_string	sub_string,
+							t_error_c		**error_addr);
 t_string				*ft_string_init3(
 							t_string	*to_init,
 							char const	*src,
@@ -57,9 +57,9 @@ extern void				ft_string_clear(t_string *string);
 
 t_string				*ft_string_new(t_error_c **error_addr);
 t_string				*ft_string_new2(
-							t_string_c	*src,
-							t_string_pi part_info,
-							t_error_c	**error_addr);
+							t_string_c		*src,
+							t_sub_string	sub_string,
+							t_error_c		**error_addr);
 t_string				*ft_string_new3(
 							char const	*src,
 							size_t		n,
@@ -76,7 +76,7 @@ int						ft_string_reserve(
 int						ft_string_cat(
 							t_string *string,
 							t_string_c *src,
-							t_string_pi	part_info,
+							t_sub_string	sub_string,
 							t_error_c **error_addr);
 
 extern t_bool			ft_string_empty(t_string_c *string);
@@ -86,9 +86,9 @@ extern char const		*ft_string_c_str(t_string_c *string);
 
 t_error_c				*ft_string_error_out_of_range(void);
 
-int						ft_string_check_part_info__(
-							t_string_c *src,
-							t_string_pi *part_info,
-							t_error_c **error_addr);
+int						ft_string_check_sub_string__(
+							t_string_c		*src,
+							t_sub_string	*sub_string,
+							t_error_c		**error_addr);
 
 #endif

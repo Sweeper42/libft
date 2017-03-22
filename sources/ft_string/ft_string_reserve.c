@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 19:38:34 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 19:43:38 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 16:58:11 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int		ft_string_reserve(
 		return (0);
 	if (!ft_realloc((void **)&string->str, string->alloc_size, new_size))
 	{
-		*error_addr = ft_error_bad_alloc();
+		if (error_addr)
+			*error_addr = ft_error_bad_alloc();
 		return (-1);
 	}
 	string->alloc_size = new_size;

@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 19:15:08 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 19:18:36 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 16:58:05 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ t_string				*ft_string_new3(
 	t_string	*new;
 
 	if (!(new = malloc(sizeof(t_string))))
-		*error_addr = ft_error_bad_alloc();
+	{
+		if (error_addr)
+			*error_addr = ft_error_bad_alloc();
+	}
 	else if (!ft_string_init3(new, src, n, error_addr))
 		ft_memdel((void **)&new);
 	return (new);
