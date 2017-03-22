@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 17:58:47 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/22 18:05:25 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include "ft_error.h"
 # include "ft_bool.h"
+# include "ft_var_handling.h"
 
 # define FT_STRING_NPOS			((size_t)-1)
 # define FT_STRING_INIT_SIZE	((size_t)8)
@@ -41,6 +42,8 @@ typedef struct			s_sub_string
 	size_t				start;
 	size_t				len;
 }						t_sub_string;
+
+t_var_handler_c			*ft_string_get_handler(void);
 
 /*
 **------------------------|      initialization      |------------------------**
