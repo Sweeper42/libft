@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:21:03 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 18:25:27 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 15:45:43 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ ssize_t			ft_string_put_fd(
 					int fd,
 					t_error_c **error_addr)
 {
-	(void)error_addr;
-	return (write(fd, string->str, string->size));
+	ssize_t		ret_value;
+
+	ret_value = write(fd, string->str, string->size);
+	if (ret_value < 0)
+		*error_addr = ft_error_bad_fd();
+	return (ret_value);
 }
