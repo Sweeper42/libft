@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 16:53:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 18:12:12 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 17:06:55 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ typedef struct					s_var_handler
 	int							(*dup)(
 									void const *,
 									void **,
-									t_error **);
+									t_error_c **);
 	int							(*cpy)(
 									void const *,
 									void *,
-									t_error **);
+									t_error_c **);
 	int							(*delete)(
 									void *,
-									t_error **);
+									t_error_c **);
 	t_bool						(*equal)(
 									void const *,
 									void const *);

@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 16:23:59 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 17:32:44 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,12 +116,15 @@ int						ft_string_cati(
 							int				value,
 							t_error_c		**error_addr);
 
-
 /*
 **------------------------|    string operations     |------------------------**
 */
 
 extern char const		*ft_string_c_str(t_string_c *string);
+
+/*
+**------------------------|  relational operations   |------------------------**
+*/
 
 int						ft_string_dup(
 							t_string_c	*string,

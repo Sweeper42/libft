@@ -77,6 +77,28 @@ OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_STRING_DIRS))
 SRCS += $(addprefix $(FT_STRING_DIR)/, $(FT_STRING_SRCS))
 # END FT_STRING
 
+# BEGIN FT_STACK
+FT_STACK_DIR = ft_stack
+FT_STACK_DIRS = $(FT_STACK_DIR)
+FT_STACK_SRCS = \
+	ft_stack_init.c		ft_stack_clean.c	ft_stack_new.c \
+	ft_stack_delete.c	ft_stack_empty.c	ft_stack_size.c \
+	ft_stack_push.c		ft_stack_pop.c		ft_stack_emplace.c \
+	ft_stack_get_handler.c					ft_stack_top.c
+
+#  BEGIN FT_ERROR_ERROR_DEF
+FT_STACK_ERROR_DEF_DIR = error_def
+FT_STACK_ERROR_DEF_SRCS = \
+	ft_stack_error_no_delete.c		ft_stack_error_stack_empty.c
+
+FT_STACK_DIRS += $(addprefix $(FT_STACK_DIR)/, $(FT_STACK_ERROR_DEF_DIR))
+FT_STACK_SRCS += $(addprefix $(FT_STACK_ERROR_DEF_DIR)/, $(FT_STACK_ERROR_DEF_SRCS))
+#  END FT_ERROR_ERROR_DEF
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_STACK_DIRS))
+SRCS += $(addprefix $(FT_STACK_DIR)/, $(FT_STACK_SRCS))
+# END FT_STRING
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
 
