@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 18:25:01 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 16:23:59 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,19 @@ int						ft_string_reserve(
 */
 
 int						ft_string_cat(
-							t_string *string,
-							t_string_c *src,
+							t_string		*string,
+							t_string_c		*src,
 							t_sub_string	sub_string,
-							t_error_c **error_addr);
+							t_error_c		**error_addr);
+int						ft_string_catu(
+							t_string		*string,
+							unsigned		value,
+							t_error_c		**error_addr);
+int						ft_string_cati(
+							t_string		*string,
+							int				value,
+							t_error_c		**error_addr);
+
 
 /*
 **------------------------|    string operations     |------------------------**
