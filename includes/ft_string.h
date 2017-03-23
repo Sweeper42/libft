@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 17:32:44 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 18:12:41 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,11 @@ t_string				*ft_string_new2(
 t_string				*ft_string_new3(
 							char const	*src,
 							size_t		n,
+							t_error_c	**error_addr);
+
+
+t_string				*ft_string_from_cstring(
+							char const	*cstring,
 							t_error_c	**error_addr);
 
 int						ft_string_delete(

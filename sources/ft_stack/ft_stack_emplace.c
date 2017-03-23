@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 17:28:17 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 17:31:50 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 18:22:02 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_stack_emplace(
 		return (-1);
 	}
 	*error_addr = NULL;
-	new->value = create(data, error_addr);
+	new->value = (*create)(data, error_addr);
 	if (*error_addr)
 	{
 		free(new);
