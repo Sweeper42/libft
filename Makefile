@@ -65,14 +65,14 @@ FT_STRING_SRCS = \
 	ft_string_put_fd.c	ft_string_catu.c	ft_string_cati.c \
 	ft_string_from_cstring.c
 
-#  BEGIN FT_ERROR_ERROR_DEF
+#  BEGIN FT_STRING_ERROR_ERROR_DEF
 FT_STRING_ERROR_DEF_DIR = error_def
 FT_STRING_ERROR_DEF_SRCS = \
 	ft_string_error_out_of_range.c
 
 FT_STRING_DIRS += $(addprefix $(FT_STRING_DIR)/, $(FT_STRING_ERROR_DEF_DIR))
 FT_STRING_SRCS += $(addprefix $(FT_STRING_ERROR_DEF_DIR)/, $(FT_STRING_ERROR_DEF_SRCS))
-#  END FT_ERROR_ERROR_DEF
+#  END FT_STRING_ERROR_ERROR_DEF
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_STRING_DIRS))
 SRCS += $(addprefix $(FT_STRING_DIR)/, $(FT_STRING_SRCS))
@@ -87,18 +87,40 @@ FT_STACK_SRCS = \
 	ft_stack_push.c		ft_stack_pop.c		ft_stack_emplace.c \
 	ft_stack_get_handler.c					ft_stack_top.c
 
-#  BEGIN FT_ERROR_ERROR_DEF
+#  BEGIN FT_STACK_ERROR_ERROR_DEF
 FT_STACK_ERROR_DEF_DIR = error_def
 FT_STACK_ERROR_DEF_SRCS = \
 	ft_stack_error_no_delete.c		ft_stack_error_stack_empty.c
 
 FT_STACK_DIRS += $(addprefix $(FT_STACK_DIR)/, $(FT_STACK_ERROR_DEF_DIR))
 FT_STACK_SRCS += $(addprefix $(FT_STACK_ERROR_DEF_DIR)/, $(FT_STACK_ERROR_DEF_SRCS))
-#  END FT_ERROR_ERROR_DEF
+#  END FT_STACK_ERROR_ERROR_DEF
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_STACK_DIRS))
 SRCS += $(addprefix $(FT_STACK_DIR)/, $(FT_STACK_SRCS))
-# END FT_STRING
+# END FT_STACK
+
+# BEGIN FT_LIST
+FT_LIST_DIR = ft_list
+FT_LIST_DIRS = $(FT_LIST_DIR)
+FT_LIST_SRCS = \
+	ft_list_init.c			ft_list_clean.c		ft_list_new.c \
+	ft_list_delete.c		ft_list_size.c		ft_list_empty.c \
+	ft_list_front.c			ft_list_back.c		ft_list_push_back.c \
+	ft_list_push_front.c	ft_list_pop_back.c	ft_list_pop_front.c
+
+#  BEGIN FT_LIST_ERROR_ERROR_DEF
+FT_LIST_ERROR_DEF_DIR = error_def
+FT_LIST_ERROR_DEF_SRCS = \
+	ft_list_error_no_delete.c		ft_list_error_list_empty.c
+
+FT_LIST_DIRS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_ERROR_DEF_DIR))
+FT_LIST_SRCS += $(addprefix $(FT_LIST_ERROR_DEF_DIR)/, $(FT_LIST_ERROR_DEF_SRCS))
+#  END FT_LIST_ERROR_ERROR_DEF
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_LIST_DIRS))
+SRCS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_SRCS))
+# END FT_LIST
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
