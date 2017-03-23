@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 17:28:17 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 18:22:02 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 19:06:26 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ int		ft_stack_emplace(
 
 	if (!(new = malloc(sizeof(t_stack_elem))))
 	{
-		*error_addr = ft_error_bad_alloc();
+		if (error_addr)
+			*error_addr = ft_error_bad_alloc();
 		return (-1);
 	}
 	*error_addr = NULL;
 	new->value = (*create)(data, error_addr);
-	if (*error_addr)
+	if (!error_addr || *error_addr)
 	{
 		free(new);
 		return (-1);

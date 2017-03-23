@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 17:18:30 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 17:19:46 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/23 19:05:46 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void		*ft_stack_top(
 {
 	if (stack->size == 0)
 	{
-		*error_addr = ft_stack_error_stack_empty();
+		if (error_addr)
+			*error_addr = ft_stack_error_stack_empty();
 		return (NULL);
 	}
 	return (stack->top->value);
