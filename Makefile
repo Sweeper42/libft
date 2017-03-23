@@ -19,7 +19,7 @@ FT_ERROR_SRCS = \
 #  BEGIN FT_ERROR_ERROR_DEF
 FT_ERROR_ERROR_DEF_DIR = error_def
 FT_ERROR_ERROR_DEF_SRCS = \
-	ft_error_bad_alloc.c
+	ft_error_bad_alloc.c		ft_error_bad_fd.c
 
 FT_ERROR_DIRS += $(addprefix $(FT_ERROR_DIR)/, $(FT_ERROR_ERROR_DEF_DIR))
 FT_ERROR_SRCS += $(addprefix $(FT_ERROR_ERROR_DEF_DIR)/, $(FT_ERROR_ERROR_DEF_SRCS))
