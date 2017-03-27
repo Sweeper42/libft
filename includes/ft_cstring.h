@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:50:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 17:26:00 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/27 17:14:32 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ int					ft_strcmp(
 t_bool				ft_strequal(
 						char const	*s1,
 						char const	*s2);
+
+extern t_bool		ft_isdigit(int c);
 
 #endif
