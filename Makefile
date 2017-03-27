@@ -65,14 +65,14 @@ FT_STRING_SRCS = \
 	ft_string_put_fd.c	ft_string_catu.c	ft_string_cati.c \
 	ft_string_from_cstring.c
 
-#  BEGIN FT_STRING_ERROR_ERROR_DEF
+#  BEGIN FT_STRING_ERROR_DEF
 FT_STRING_ERROR_DEF_DIR = error_def
 FT_STRING_ERROR_DEF_SRCS = \
 	ft_string_error_out_of_range.c
 
 FT_STRING_DIRS += $(addprefix $(FT_STRING_DIR)/, $(FT_STRING_ERROR_DEF_DIR))
 FT_STRING_SRCS += $(addprefix $(FT_STRING_ERROR_DEF_DIR)/, $(FT_STRING_ERROR_DEF_SRCS))
-#  END FT_STRING_ERROR_ERROR_DEF
+#  END FT_STRING_ERROR_DEF
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_STRING_DIRS))
 SRCS += $(addprefix $(FT_STRING_DIR)/, $(FT_STRING_SRCS))
@@ -87,14 +87,14 @@ FT_STACK_SRCS = \
 	ft_stack_push.c		ft_stack_pop.c		ft_stack_emplace.c \
 	ft_stack_get_handler.c					ft_stack_top.c
 
-#  BEGIN FT_STACK_ERROR_ERROR_DEF
+#  BEGIN FT_STACK_ERROR_DEF
 FT_STACK_ERROR_DEF_DIR = error_def
 FT_STACK_ERROR_DEF_SRCS = \
 	ft_stack_error_no_delete.c		ft_stack_error_stack_empty.c
 
 FT_STACK_DIRS += $(addprefix $(FT_STACK_DIR)/, $(FT_STACK_ERROR_DEF_DIR))
 FT_STACK_SRCS += $(addprefix $(FT_STACK_ERROR_DEF_DIR)/, $(FT_STACK_ERROR_DEF_SRCS))
-#  END FT_STACK_ERROR_ERROR_DEF
+#  END FT_STACK_ERROR_DEF
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_STACK_DIRS))
 SRCS += $(addprefix $(FT_STACK_DIR)/, $(FT_STACK_SRCS))
@@ -121,6 +121,27 @@ FT_LIST_SRCS += $(addprefix $(FT_LIST_ERROR_DEF_DIR)/, $(FT_LIST_ERROR_DEF_SRCS)
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_LIST_DIRS))
 SRCS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_SRCS))
 # END FT_LIST
+
+# BEGIN FT_ITERATOR
+FT_ITERATOR_DIR = ft_iterator
+FT_ITERATOR_DIRS = $(FT_ITERATOR_DIR)
+FT_ITERATOR_SRCS = \
+	ft_it_next.c	ft_it_prev.c	ft_it_value.c \
+	ft_it_move.c	ft_it_rmove.c	ft_it_value.c
+
+#  BEGIN FT_ITERATOR_ERROR_DEF
+FT_ITERATOR_ERROR_DEF_DIR = error_def
+FT_ITERATOR_ERROR_DEF_SRCS = \
+	ft_iterator_error_bad_operation.c	ft_iterator_error_no_value.c \
+	ft_iterator_error_out_of_bound.c
+
+FT_ITERATOR_DIRS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_ERROR_DEF_DIR))
+FT_ITERATOR_SRCS += $(addprefix $(FT_ITERATOR_ERROR_DEF_DIR)/, $(FT_ITERATOR_ERROR_DEF_SRCS))
+#  END FT_ITERATOR_ERROR_DEF
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ITERATOR_DIRS))
+SRCS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_SRCS))
+# END FT_ITERATOR
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
