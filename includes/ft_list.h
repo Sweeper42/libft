@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:37:12 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 19:26:36 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/27 15:40:26 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "ft_error.h"
 # include "ft_bool.h"
 # include "ft_var_handling.h"
+# include "ft_iterator.h"
 
 # define FT_LIST_ERROR_NO_DELETE		FT_ERROR_NEW_ERR_NUM
 # define FT_LIST_ERROR_LIST_EMPTY		FT_ERROR_NEW_ERR_NUM
@@ -83,6 +84,55 @@ extern void					*ft_list_front(
 extern void					*ft_list_back(
 								t_list		*list,
 								t_error_c	**error_addr);
+
+/*
+**------------------------|     iterator access      |------------------------**
+*/
+
+extern t_iterator			ft_list_begin(t_list *list);
+extern t_iterator			ft_list_end(t_list *list);
+
+extern t_iterator			ft_list_rbegin(t_list *list);
+extern t_iterator			ft_list_rend(t_list *list);
+
+t_iterator					ft_list_find(
+								t_list		*list,
+								void const	*to_compare,
+								t_error_c	**error_addr);
+t_iterator					ft_list_find_from(
+								t_list			*list,
+								t_iterator_c	*pos,
+								void const		*to_compare,
+								t_error_c		**error_addr);
+
+/*
+**------------------------|     iterator handling    |------------------------**
+*/
+
+t_iterator					ft_list_it_next(
+								t_iterator_c	*it,
+								t_error_c		**error_addr);
+t_iterator					ft_list_it_prev(
+								t_iterator_c	*it,
+								t_error_c		**error_addr);
+
+t_iterator					*ft_list_it_move(
+								t_iterator	*it,
+								t_error_c	**error_addr);
+t_iterator					*ft_list_it_rmove(
+								t_iterator	*it,
+								t_error_c	**error_addr);
+
+void						*ft_list_it_value(
+								t_iterator	*it,
+								t_error_c	**error_addr);
+
+t_bool						ft_list_it_equal(
+								t_iterator_c	*it,
+								t_iterator_c	*to_compare);
+
+t_iterator_handler_c		*ft_list_get_iterator_handler(void);
+t_iterator_handler_c		*ft_list_get_riterator_handler(void);
 
 /*
 **------------------------|         modifiers        |------------------------**

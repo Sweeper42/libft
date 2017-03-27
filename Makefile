@@ -107,16 +107,29 @@ FT_LIST_SRCS = \
 	ft_list_init.c			ft_list_clean.c		ft_list_new.c \
 	ft_list_delete.c		ft_list_size.c		ft_list_empty.c \
 	ft_list_front.c			ft_list_back.c		ft_list_push_back.c \
-	ft_list_push_front.c	ft_list_pop_back.c	ft_list_pop_front.c
+	ft_list_push_front.c	ft_list_pop_back.c	ft_list_pop_front.c \
+	ft_list_begin.c			ft_list_end.c		ft_list_rbegin.c \
+	ft_list_rend.c
 
-#  BEGIN FT_LIST_ERROR_ERROR_DEF
+#  BEGIN FT_LIST_ERROR_DEF
 FT_LIST_ERROR_DEF_DIR = error_def
 FT_LIST_ERROR_DEF_SRCS = \
 	ft_list_error_no_delete.c		ft_list_error_list_empty.c
 
 FT_LIST_DIRS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_ERROR_DEF_DIR))
 FT_LIST_SRCS += $(addprefix $(FT_LIST_ERROR_DEF_DIR)/, $(FT_LIST_ERROR_DEF_SRCS))
-#  END FT_LIST_ERROR_ERROR_DEF
+#  END FT_LIST_ERROR_DEF
+
+#  BEGIN FT_LIST_ITERATOR_HANDLER
+FT_LIST_ITERATOR_HANDLER_DIR = iterator_handling
+FT_LIST_ITERATOR_HANDLER_SRCS = \
+	ft_list_it_next.c		ft_list_it_prev.c		ft_list_it_move.c \
+	ft_list_it_rmove.c		ft_list_it_equal.c		ft_list_it_value.c \
+	ft_list_get_iterator_handler.c	ft_list_get_riterator_handler.c
+
+FT_LIST_DIRS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_ITERATOR_HANDLER_DIR))
+FT_LIST_SRCS += $(addprefix $(FT_LIST_ITERATOR_HANDLER_DIR)/, $(FT_LIST_ITERATOR_HANDLER_SRCS))
+#  END FT_LIST_ITERATOR_HANDLER
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_LIST_DIRS))
 SRCS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_SRCS))
@@ -127,7 +140,8 @@ FT_ITERATOR_DIR = ft_iterator
 FT_ITERATOR_DIRS = $(FT_ITERATOR_DIR)
 FT_ITERATOR_SRCS = \
 	ft_it_next.c	ft_it_prev.c	ft_it_value.c \
-	ft_it_move.c	ft_it_rmove.c	ft_it_value.c
+	ft_it_move.c	ft_it_rmove.c	ft_it_value.c \
+	ft_it_equal.c
 
 #  BEGIN FT_ITERATOR_ERROR_DEF
 FT_ITERATOR_ERROR_DEF_DIR = error_def

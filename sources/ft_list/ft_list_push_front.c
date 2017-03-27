@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 19:09:14 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 19:12:12 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/27 16:11:41 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int			ft_list_push_front(
 	new->value = value;
 	new->prev = &list->first;
 	new->next = list->first.next;
+	list->first.next->prev = new;
 	list->first.next = new;
 	list->size++;
 	return (0);

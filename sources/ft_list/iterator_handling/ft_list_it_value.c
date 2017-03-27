@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_delete.c                                   :+:      :+:    :+:   */
+/*   ft_list_it_value.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 19:00:04 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 16:04:12 by nperrin          ###   ########.fr       */
+/*   Created: 2017/03/27 15:25:47 by nperrin           #+#    #+#             */
+/*   Updated: 2017/03/27 15:28:34 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_list.h"
 
-int		ft_list_delete(
-			t_list *list,
-			t_bool delete_value,
-			t_error_c **error_addr)
+void		*ft_list_it_value(
+				t_iterator *it,
+				t_error_c **error_addr)
 {
-	if (ft_list_clean(list, delete_value, error_addr) == -1)
-		return (-1);
-	free(list);
-	return (0);
+	t_list	*list;
+
+	list = it->container;
+	if ((it->data1 == &list->last)
+		|| (it->data2 == &list->first))
+	{
+		*error_addr = ft_iterator_error_no_value();
+		return (NULL);
+	}
+	return (((t_list_elem *)it->data1)->value);
 }

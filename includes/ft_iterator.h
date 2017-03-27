@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 13:21:29 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 14:08:22 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/03/27 15:32:31 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "ft_error.h"
 # include "ft_bool.h"
+
+# define FT_ITERATOR_CREATE(h, c, d1, d2) ((t_iterator){h, c, d1, d2})
 
 /*
 **------------------------|       errors number      |------------------------**
