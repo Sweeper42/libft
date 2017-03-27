@@ -34,7 +34,7 @@ FT_CSTRING_DIR = ft_cstring
 FT_CSTRING_SRCS = \
 	ft_strlen.c		ft_strcpy.c		ft_strchr.c \
 	ft_strdup.c		ft_strndup.c	ft_strcmp.c \
-	ft_strequal.c
+	ft_strequal.c	ft_isdigit.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_CSTRING_DIR))
 SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
