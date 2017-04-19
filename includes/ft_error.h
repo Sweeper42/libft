@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:51:18 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 15:43:02 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/04/19 15:26:27 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define FT_ERROR_BAD_ALLOC		FT_ERROR_NEW_ERR_NUM
 # define FT_ERROR_BAD_FD		FT_ERROR_NEW_ERR_NUM
+# define FT_ERROR_NO_DUP		FT_ERROR_NEW_ERR_NUM
 
 typedef struct			s_error
 {
@@ -33,5 +34,6 @@ extern char const		*ft_error_get_why(t_error_c *error);
 
 t_error_c				*ft_error_bad_alloc(void);
 t_error_c				*ft_error_bad_fd(void);
+t_error_c				*ft_error_no_dup(void);
 
 #endif

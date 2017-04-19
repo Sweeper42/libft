@@ -8,7 +8,7 @@ INC_DIR = includes
 OBJ_DIR = objs
 OBJ_DIRS = $(OBJ_DIR)
 
-CFLAGS = -Wall -Werror -Wextra -Weverything -MMD -O2
+CFLAGS = -Wall -Werror -Wextra -MMD -O2
 
 # BEGIN FT_ERROR
 FT_ERROR_DIR = ft_error
@@ -19,7 +19,7 @@ FT_ERROR_SRCS = \
 #  BEGIN FT_ERROR_ERROR_DEF
 FT_ERROR_ERROR_DEF_DIR = error_def
 FT_ERROR_ERROR_DEF_SRCS = \
-	ft_error_bad_alloc.c		ft_error_bad_fd.c
+	ft_error_bad_alloc.c		ft_error_bad_fd.c		ft_error_no_dup.c
 
 FT_ERROR_DIRS += $(addprefix $(FT_ERROR_DIR)/, $(FT_ERROR_ERROR_DEF_DIR))
 FT_ERROR_SRCS += $(addprefix $(FT_ERROR_ERROR_DEF_DIR)/, $(FT_ERROR_ERROR_DEF_SRCS))
