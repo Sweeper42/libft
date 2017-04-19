@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 15:16:07 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 15:32:19 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/04/19 16:01:25 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static inline int		dup_value___(
 	}
 	if (handler->dup(value, target, error_addr) == -1)
 		return (-1);
+	return (0);
 }
 
 inline t_list_elem		*ft_list_create_elem(
@@ -41,14 +42,14 @@ inline t_list_elem		*ft_list_create_elem(
 	{
 		if (*error_addr)
 			*error_addr = ft_error_bad_alloc();
-		return (-1);
+		return (NULL);
 	}
 	if (list->copy_on)
 	{
 		if (dup_value___(value, &elem->value, list->handler, error_addr) == -1)
 		{
 			free(elem);
-			return (-1);
+			return (NULL);
 		}
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:52:25 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 16:03:38 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/04/19 15:54:01 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int					ft_list_clean(
 		return (-1);
 	cur = list->first.next;
 	prev = NULL;
-	while (cur != &list->last)
+	while ((cur != &list->last) && cur)
 	{
 		if (delete_value &&
 			(list->handler->delete(cur->value, error_addr) == -1))
