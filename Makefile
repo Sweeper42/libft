@@ -68,7 +68,8 @@ FT_STRING_SRCS = \
 #  BEGIN FT_STRING_ERROR_DEF
 FT_STRING_ERROR_DEF_DIR = error_def
 FT_STRING_ERROR_DEF_SRCS = \
-	ft_string_error_out_of_range.c
+	ft_string_error_out_of_range.c		ft_string_error_value_to_big.c \
+	ft_string_error_no_value_found.c
 
 FT_STRING_DIRS += $(addprefix $(FT_STRING_DIR)/, $(FT_STRING_ERROR_DEF_DIR))
 FT_STRING_SRCS += $(addprefix $(FT_STRING_ERROR_DEF_DIR)/, $(FT_STRING_ERROR_DEF_SRCS))

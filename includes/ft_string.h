@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 15:39:29 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/04/19 16:07:23 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 # define FT_STRING_GET_MARGIN(X)	((size_t)((X) + 8))
 
 # define FT_STRING_ERROR_OUT_OF_RANGE		FT_ERROR_NEW_ERR_NUM
-# define FT_STRING_ERROR_NO_INT_FOUND		FT_ERROR_NEW_ERR_NUM
+# define FT_STRING_ERROR_NO_VALUE_FOUND		FT_ERROR_NEW_ERR_NUM
+# define FT_STRING_ERROR_VALUE_TO_BIG		FT_ERROR_NEW_ERR_NUM
 
 # define FT_SUB_STRING(start, len)			((t_sub_string){start, len})
 # define FT_SUB_STRING_ALL					FT_SUB_STRING(0, FT_STRING_NPOS)
@@ -166,6 +167,8 @@ ssize_t					ft_string_put_fd(
 */
 
 t_error_c				*ft_string_error_out_of_range(void);
+t_error_c				*ft_string_error_no_value_found(void);
+t_error_c				*ft_string_error_value_to_big(void);
 
 /*
 **------------------------|     private methode      |------------------------**
