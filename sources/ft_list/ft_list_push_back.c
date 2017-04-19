@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 19:03:32 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 16:11:00 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/04/19 15:34:08 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,14 @@ int			ft_list_push_back(
 				void *value,
 				t_error_c **error_addr)
 {
-	t_list_elem		*new;
+	t_list_elem		*elem;
 
-	if (!(new = malloc(sizeof(t_list_elem))))
-	{
-		if (*error_addr)
-			*error_addr = ft_error_bad_alloc();
+	if (!(elem = ft_list_create_elem(list, value, error_addr)))
 		return (-1);
-	}
-	new->value = value;
-	new->next = &list->last;
-	new->prev = list->last.prev;
-	list->last.prev->next = new;
-	list->last.prev = new;
+	elem->next = &list->last;
+	elem->prev = list->last.prev;
+	list->last.prev->next = elem;
+	list->last.prev = elem;
 	list->size++;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:37:12 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 15:40:26 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/04/19 15:38:33 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct				s_list
 	t_var_handler_c			*handler;
 	t_list_elem				first;
 	t_list_elem				last;
+	t_bool					copy_on;
 }							t_list;
 
 typedef t_list const		t_list_c;
@@ -83,6 +84,15 @@ extern void					*ft_list_front(
 								t_error_c	**error_addr);
 extern void					*ft_list_back(
 								t_list		*list,
+								t_error_c	**error_addr);
+
+/*
+**------------------------|  relational operations   |------------------------**
+*/
+
+int							ft_list_dup(
+								t_list_c	*list,
+								t_list		**target,
 								t_error_c	**error_addr);
 
 /*
@@ -156,11 +166,24 @@ int							ft_list_pop_back(
 								t_bool		delete_value,
 								t_error_c	**error_addr);
 
+extern void					ft_list_set_copy_to(
+								t_list	*list,
+								t_bool	copy_on);
+
 /*
 **------------------------|          errors          |------------------------**
 */
 
 t_error_c					*ft_list_error_no_delete(void);
 t_error_c					*ft_list_error_list_empty(void);
+
+/*
+**------------------------|          private         |------------------------**
+*/
+
+extern t_list_elem			*ft_list_create_elem(
+								t_list_c	*list,
+								void		*value,
+								t_error_c	**error_addr);
 
 #endif

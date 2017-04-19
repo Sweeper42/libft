@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_init.c                                     :+:      :+:    :+:   */
+/*   ft_list_set_copy_to.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 18:44:51 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 15:15:17 by nperrin          ###   ########.fr       */
+/*   Created: 2017/04/19 15:36:50 by nperrin           #+#    #+#             */
+/*   Updated: 2017/04/19 15:37:27 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list						*ft_list_init(
-								t_list *to_init,
-								t_var_handler_c *handler)
+inline void					ft_list_set_copy_to(
+								t_list *list,
+								t_bool copy_on)
 {
-	to_init->size = 0;
-	to_init->handler = handler;
-	to_init->first = (t_list_elem){NULL, &to_init->last, &to_init->first};
-	to_init->last = (t_list_elem){&to_init->first, NULL, &to_init->last};
-	to_init->copy_on = false;
-	return (to_init);
+	list->copy_on = copy_on;
 }
