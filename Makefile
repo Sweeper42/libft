@@ -180,6 +180,26 @@ OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_FSM_MATCH_DIRS))
 SRCS += $(addprefix $(FT_FSM_MATCH_DIR)/, $(FT_FSM_MATCH_SRCS))
 # END FT_FSM_MATCH
 
+# BEGIN FT_SWAP
+FT_SWAP_DIR = ft_swap
+FT_SWAP_SRCS = \
+	ft_swap_int.c
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_SWAP_DIR))
+SRCS += $(addprefix $(FT_SWAP_DIR)/, $(FT_SWAP_SRCS))
+# END FT_SWAP
+
+# BEGIN FT_ARRAY
+FT_ARRAY_DIR = ft_array
+FT_ARRAY_DIRS = $(FT_ARRAY_DIR)
+FT_ARRAY_SRCS = \
+	ft_int_array_bubble_sort.c	ft_int_array_heap_sort.c	ft_int_array_heap_sort_stat.c \
+	ft_int_array_fill_rand.c	ft_int_array_insertion_sort.c
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ARRAY_DIRS))
+SRCS += $(addprefix $(FT_ARRAY_DIR)/, $(FT_ARRAY_SRCS))
+# END FT_ARRAY
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
 
