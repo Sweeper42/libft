@@ -159,6 +159,27 @@ OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ITERATOR_DIRS))
 SRCS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_SRCS))
 # END FT_ITERATOR
 
+# BEGIN FT_FSM_MATCH
+FT_FSM_MATCH_DIR = ft_fsm_match
+FT_FSM_MATCH_DIRS = $(FT_FSM_MATCH_DIR)
+FT_FSM_MATCH_SRCS = \
+	ft_fsmm_branch_is_matching.c		ft_fsmm_find_next_state.c \
+	ft_fsmm_str_match.c
+
+#  BEGIN FT_FSMM_SEARCH_ACTION
+FT_FSMM_SEARCH_ACTION_DIR = search_action
+FT_FSMM_SEARCH_ACTION_SRCS = \
+	ft_fsmm_action_is.c		ft_fsmm_action_is_any_of.c		ft_fsmm_action_is_zero.c \
+	ft_fsmm_action_is_not.c	ft_fsmm_action_is_none_of.c		ft_fsmm_action_is_anything.c
+
+FT_FSM_MATCH_DIRS += $(addprefix $(FT_FSM_MATCH_DIR)/, $(FT_FSMM_SEARCH_ACTION_DIR))
+FT_FSM_MATCH_SRCS += $(addprefix $(FT_FSMM_SEARCH_ACTION_DIR)/, $(FT_FSMM_SEARCH_ACTION_SRCS))
+#  END FT_FSMM_SEARCH_ACTION
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_FSM_MATCH_DIRS))
+SRCS += $(addprefix $(FT_FSM_MATCH_DIR)/, $(FT_FSM_MATCH_SRCS))
+# END FT_FSM_MATCH
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
 
