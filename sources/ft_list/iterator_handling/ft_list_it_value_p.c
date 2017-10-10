@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_it_value_p.c                                    :+:      :+:    :+:   */
+/*   ft_list_it_value_p.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/10 12:02:39 by nelson            #+#    #+#             */
-/*   Updated: 2017/10/10 12:04:19 by nelson           ###   ########.fr       */
+/*   Updated: 2017/10/10 14:20:55 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		*ft_list_it_value_p(
 
 	list = it->container;
 	if ((it->data1 == &list->last)
-		|| (it->data2 == &list->first))
+		|| (it->data1 == &list->first))
 	{
 		*error_addr = ft_iterator_error_no_value();
 		return (NULL);

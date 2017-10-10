@@ -6,7 +6,7 @@
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:37:12 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/10 12:06:46 by nelson           ###   ########.fr       */
+/*   Updated: 2017/10/10 14:05:48 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_LIST_H
 
 # include <stddef.h>
+# include <stdint.h>
 # include "ft_error.h"
 # include "ft_bool.h"
 # include "ft_var_handling.h"
@@ -21,6 +22,13 @@
 
 # define FT_LIST_ERROR_NO_DELETE		FT_ERROR_NEW_ERR_NUM
 # define FT_LIST_ERROR_LIST_EMPTY		FT_ERROR_NEW_ERR_NUM
+# define FT_LIST_ERROR_INVALID_REF		FT_ERROR_NEW_ERR_NUM
+# define FT_LIST_ERROR_BAD_ITERATOR		FT_ERROR_NEW_ERR_NUM
+
+# define FT_LIST_BY_VALUE				0
+# define FT_LIST_BY_REF					1
+# define FT_LIST_IS_BY_VALUE(X)			(((X).flags & 1) == FT_LIST_BY_VALUE)
+# define FT_LIST_IS_BY_REF(X)			(((X).flags & 1) == FT_LIST_BY_REF)
 
 typedef struct s_list_elem	t_list_elem;
 
@@ -37,7 +45,7 @@ typedef struct				s_list
 	t_var_handler_c			*handler;
 	t_list_elem				first;
 	t_list_elem				last;
-	t_bool					copy_on;
+	uint8_t					flags;
 }							t_list;
 
 typedef t_list const		t_list_c;
@@ -47,12 +55,13 @@ typedef t_list const		t_list_c;
 **------------------------|       and cleaning       |------------------------**
 */
 
-t_list						*ft_list_init(
+int							ft_list_init(
 								t_list			*to_init,
-								t_var_handler_c *handler);
+								uint8_t			flags,
+								t_var_handler_c *handler,
+								t_error_c		**error_addr);
 int							ft_list_clean(
 								t_list		*list,
-								t_bool		delete_value,
 								t_error_c	**error_addr);
 
 /*
@@ -61,11 +70,11 @@ int							ft_list_clean(
 */
 
 t_list						*ft_list_new(
+								uint8_t			flags,
 								t_var_handler_c	*handler,
 								t_error_c		**error_addr);
 int							ft_list_delete(
 								t_list		*list,
-								t_bool		delete_value,
 								t_error_c	**error_addr);
 
 /*
@@ -162,16 +171,14 @@ int							ft_list_push_back(
 
 int							ft_list_pop_front(
 								t_list		*list,
-								t_bool		delete_value,
 								t_error_c	**error_addr);
 int							ft_list_pop_back(
 								t_list		*list,
-								t_bool		delete_value,
 								t_error_c	**error_addr);
-
-extern void					ft_list_set_copy_to(
-								t_list	*list,
-								t_bool	copy_on);
+int							ft_list_remove(
+								t_list		*list,
+								t_iterator	*to_remove,
+								t_error_c	**error_addr); // to do
 
 /*
 **------------------------|          errors          |------------------------**
@@ -179,6 +186,8 @@ extern void					ft_list_set_copy_to(
 
 t_error_c					*ft_list_error_no_delete(void);
 t_error_c					*ft_list_error_list_empty(void);
+t_error_c					*ft_list_error_invalid_ref(void);
+t_error_c					*ft_list_error_bad_iterator(void);
 
 /*
 **------------------------|          private         |------------------------**

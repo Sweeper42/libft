@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_create_elem.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 15:16:07 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 16:01:25 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/10 13:45:11 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ inline t_list_elem		*ft_list_create_elem(
 			*error_addr = ft_error_bad_alloc();
 		return (NULL);
 	}
-	if (list->copy_on)
+	if (FT_LIST_IS_BY_VALUE(*list))
 	{
 		if (dup_value___(value, &elem->value, list->handler, error_addr) == -1)
 		{

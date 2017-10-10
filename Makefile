@@ -110,13 +110,14 @@ FT_LIST_SRCS = \
 	ft_list_front.c			ft_list_back.c		ft_list_push_back.c \
 	ft_list_push_front.c	ft_list_pop_back.c	ft_list_pop_front.c \
 	ft_list_begin.c			ft_list_end.c		ft_list_rbegin.c \
-	ft_list_rend.c			ft_list_set_copy_to.c \
+	ft_list_rend.c			ft_list_remove.c \
 	ft_list_create_elem.c	ft_list_dup.c
 
 #  BEGIN FT_LIST_ERROR_DEF
 FT_LIST_ERROR_DEF_DIR = error_def
 FT_LIST_ERROR_DEF_SRCS = \
-	ft_list_error_no_delete.c		ft_list_error_list_empty.c
+	ft_list_error_no_delete.c		ft_list_error_list_empty.c \
+	ft_list_error_invalid_ref.c		ft_list_error_bad_iterator.c
 
 FT_LIST_DIRS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_ERROR_DEF_DIR))
 FT_LIST_SRCS += $(addprefix $(FT_LIST_ERROR_DEF_DIR)/, $(FT_LIST_ERROR_DEF_SRCS))

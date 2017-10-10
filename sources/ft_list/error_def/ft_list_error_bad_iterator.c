@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_set_copy_to.c                              :+:      :+:    :+:   */
+/*   ft_list_error_bad_iterator.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 15:36:50 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 15:37:27 by nperrin          ###   ########.fr       */
+/*   Created: 2017/10/10 14:03:37 by nelson            #+#    #+#             */
+/*   Updated: 2017/10/10 14:05:31 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-inline void					ft_list_set_copy_to(
-								t_list *list,
-								t_bool copy_on)
+static t_error_c	g_list_error_bad_iterator =
 {
-	list->copy_on = copy_on;
+	FT_LIST_ERROR_BAD_ITERATOR,
+	"Somehow you try to destroy/move/get an invalid iterator."
+};
+
+t_error_c	*ft_list_error_bad_iterator(void)
+{
+	return (&g_list_error_bad_iterator);
 }

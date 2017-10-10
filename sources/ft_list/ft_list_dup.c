@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_dup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 15:11:33 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 16:01:54 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/10 13:56:48 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ int				ft_list_dup(
 	t_list			*copy;
 
 	*target = NULL;
-	if (!(copy = ft_list_new(list->handler, error_addr)))
+	if (!(copy = ft_list_new(list->flags, list->handler, error_addr)))
 		return (-1);
-	copy->copy_on = list->copy_on;
 	cur_dst = &copy->first;
 	cur_src = list->first.next;
 	while ((cur_src != &list->last) && cur_src)
@@ -33,7 +32,7 @@ int				ft_list_dup(
 		if (!(cur_dst->next = ft_list_create_elem(copy, cur_src->value,
 								error_addr)))
 		{
-			ft_list_delete(copy, true, NULL);
+			ft_list_delete(copy, NULL);
 			return (-1);
 		}
 		cur_src = cur_src->next;
