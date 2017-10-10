@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_get_riterator_handler.c                    :+:      :+:    :+:   */
+/*   ft_it_value_p.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/27 15:34:01 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/10 12:06:22 by nelson           ###   ########.fr       */
+/*   Created: 2017/10/10 12:02:39 by nelson            #+#    #+#             */
+/*   Updated: 2017/10/10 12:04:19 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-static t_iterator_handler_c		g_list_riterator_handler___ =
+void		*ft_list_it_value_p(
+				t_iterator *it,
+				t_error_c **error_addr)
 {
-	&ft_list_it_prev,
-	&ft_list_it_next,
-	&ft_list_it_rmove,
-	&ft_list_it_move,
-	&ft_list_it_value,
-	&ft_list_it_value_p,
-	&ft_list_it_equal
-};
+	t_list	*list;
 
-t_iterator_handler_c			*ft_list_get_riterator_handler(void)
-{
-	return (&g_list_riterator_handler___);
+	list = it->container;
+	if ((it->data1 == &list->last)
+		|| (it->data2 == &list->first))
+	{
+		*error_addr = ft_iterator_error_no_value();
+		return (NULL);
+	}
+	return (&((t_list_elem *)it->data1)->value);
 }

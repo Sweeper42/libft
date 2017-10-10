@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterator.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 13:21:29 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 15:32:31 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/10 11:58:26 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct				s_iterator_handler
 	t_iterator				*(*move)(t_iterator *, t_error_c **);
 	t_iterator				*(*rmove)(t_iterator *, t_error_c **);
 	void					*(*value)(t_iterator *, t_error_c **);
+	void					*(*value_p)(t_iterator *, t_error_c **);
 	t_bool					(*equal)(t_iterator_c *, t_iterator_c *);
 }							t_iterator_handler;
 
@@ -76,6 +77,9 @@ extern t_iterator			*ft_it_rmove(
 								t_error_c	**error_addr);
 
 extern void					*ft_it_value(
+								t_iterator	*it,
+								t_error_c	**error_addr);
+extern void					*ft_it_value_p(
 								t_iterator	*it,
 								t_error_c	**error_addr);
 

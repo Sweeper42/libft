@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_get_iterator_handler.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 15:31:23 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 15:42:15 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/10 12:07:07 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static t_iterator_handler_c		g_list_iterator_handler___ =
 	&ft_list_it_move,
 	&ft_list_it_rmove,
 	&ft_list_it_value,
+	&ft_list_it_value_p,
 	&ft_list_it_equal
 };
 

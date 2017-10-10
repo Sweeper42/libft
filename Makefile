@@ -127,7 +127,8 @@ FT_LIST_ITERATOR_HANDLER_DIR = iterator_handling
 FT_LIST_ITERATOR_HANDLER_SRCS = \
 	ft_list_it_next.c		ft_list_it_prev.c		ft_list_it_move.c \
 	ft_list_it_rmove.c		ft_list_it_equal.c		ft_list_it_value.c \
-	ft_list_get_iterator_handler.c	ft_list_get_riterator_handler.c
+	ft_list_get_iterator_handler.c	ft_list_get_riterator_handler.c \
+	ft_list_it_value_p.c
 
 FT_LIST_DIRS += $(addprefix $(FT_LIST_DIR)/, $(FT_LIST_ITERATOR_HANDLER_DIR))
 FT_LIST_SRCS += $(addprefix $(FT_LIST_ITERATOR_HANDLER_DIR)/, $(FT_LIST_ITERATOR_HANDLER_SRCS))
@@ -142,7 +143,7 @@ FT_ITERATOR_DIR = ft_iterator
 FT_ITERATOR_DIRS = $(FT_ITERATOR_DIR)
 FT_ITERATOR_SRCS = \
 	ft_it_next.c	ft_it_prev.c	ft_it_value.c \
-	ft_it_move.c	ft_it_rmove.c	ft_it_value.c \
+	ft_it_move.c	ft_it_rmove.c	ft_it_value_p.c \
 	ft_it_equal.c
 
 #  BEGIN FT_ITERATOR_ERROR_DEF
@@ -158,27 +159,6 @@ FT_ITERATOR_SRCS += $(addprefix $(FT_ITERATOR_ERROR_DEF_DIR)/, $(FT_ITERATOR_ERR
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ITERATOR_DIRS))
 SRCS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_SRCS))
 # END FT_ITERATOR
-
-# BEGIN FT_FSM_MATCH
-FT_FSM_MATCH_DIR = ft_fsm_match
-FT_FSM_MATCH_DIRS = $(FT_FSM_MATCH_DIR)
-FT_FSM_MATCH_SRCS = \
-	ft_fsmm_branch_is_matching.c		ft_fsmm_find_next_state.c \
-	ft_fsmm_str_match.c
-
-#  BEGIN FT_FSMM_SEARCH_ACTION
-FT_FSMM_SEARCH_ACTION_DIR = search_action
-FT_FSMM_SEARCH_ACTION_SRCS = \
-	ft_fsmm_action_is.c		ft_fsmm_action_is_any_of.c		ft_fsmm_action_is_zero.c \
-	ft_fsmm_action_is_not.c	ft_fsmm_action_is_none_of.c		ft_fsmm_action_is_anything.c
-
-FT_FSM_MATCH_DIRS += $(addprefix $(FT_FSM_MATCH_DIR)/, $(FT_FSMM_SEARCH_ACTION_DIR))
-FT_FSM_MATCH_SRCS += $(addprefix $(FT_FSMM_SEARCH_ACTION_DIR)/, $(FT_FSMM_SEARCH_ACTION_SRCS))
-#  END FT_FSMM_SEARCH_ACTION
-
-OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_FSM_MATCH_DIRS))
-SRCS += $(addprefix $(FT_FSM_MATCH_DIR)/, $(FT_FSM_MATCH_SRCS))
-# END FT_FSM_MATCH
 
 # BEGIN FT_SWAP
 FT_SWAP_DIR = ft_swap

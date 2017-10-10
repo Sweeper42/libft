@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:37:12 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 15:38:33 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/10 12:06:46 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,9 @@ t_iterator					*ft_list_it_rmove(
 								t_error_c	**error_addr);
 
 void						*ft_list_it_value(
+								t_iterator	*it,
+								t_error_c	**error_addr);
+void						*ft_list_it_value_p(
 								t_iterator	*it,
 								t_error_c	**error_addr);
 
