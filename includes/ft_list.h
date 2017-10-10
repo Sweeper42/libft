@@ -6,7 +6,7 @@
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:37:12 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/10 14:05:48 by nelson           ###   ########.fr       */
+/*   Updated: 2017/10/10 14:24:58 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,7 @@ int							ft_list_pop_back(
 int							ft_list_remove(
 								t_list		*list,
 								t_iterator	*to_remove,
-								t_error_c	**error_addr); // to do
+								t_error_c	**error_addr);
 
 /*
 **------------------------|          errors          |------------------------**
