@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 16:07:14 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/18 16:19:57 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/22 17:03:37 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ static int	check_handler___(
 	}
 	if (!rc_handler->cmp)
 	{
-	{
 		if (rrc_handler)
 			*rrc_handler = ft_map_error_no_relop(); 
 		return (-1);
-	}
 	}
 	return (0);
 }
