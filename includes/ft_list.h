@@ -6,12 +6,14 @@
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:37:12 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/10 14:24:58 by nelson           ###   ########.fr       */
+/*   Updated: 2017/10/10 16:06:37 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
+
+#include <stdio.h>
 
 # include <stddef.h>
 # include <stdint.h>
