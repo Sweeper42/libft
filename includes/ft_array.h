@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 08:00:49 by nperrin           #+#    #+#             */
-/*   Updated: 2017/05/31 10:54:26 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/07 11:36:05 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,5 @@ t_sort_stat		*ft_int_array_insertion_sort_stat(
 					int *array,
 					size_t n,
 					t_sort_stat *stat);
-
 
 #endif
