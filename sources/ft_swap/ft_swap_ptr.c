@@ -6,9 +6,11 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:40:58 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/07 11:41:43 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/07 11:44:48 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_swap.h"
 
 inline void		ft_swap_ptr(
 					void **a,

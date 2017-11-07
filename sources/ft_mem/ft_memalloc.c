@@ -6,12 +6,12 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:28:41 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/07 11:36:49 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/07 11:44:37 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_error.h"
+#include "ft_mem.h"
 
 inline void		*ft_memalloc(
 					size_t n,
