@@ -165,7 +165,7 @@ SRCS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_SRCS))
 # BEGIN FT_SWAP
 FT_SWAP_DIR = ft_swap
 FT_SWAP_SRCS = \
-	ft_swap_int.c
+	ft_swap_int.c	ft_swap_ptr.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_SWAP_DIR))
 SRCS += $(addprefix $(FT_SWAP_DIR)/, $(FT_SWAP_SRCS))

@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.h                                          :+:      :+:    :+:   */
+/*   ft_swap_ptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/31 09:06:01 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/07 11:40:48 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/07 11:40:58 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/07 11:41:43 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SWAP_H
-# define FT_SWAP_H
+inline void		ft_swap_ptr(
+					void **a,
+					void **b)
+{
+	void		*tmp;
 
-extern void		ft_swap_int(
-					int	*a,
-					int	*b);
-
-extern void		ft_swap_ptr(
-					void	**a,
-					void	**b);
-
-#endif
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
