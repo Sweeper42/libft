@@ -182,6 +182,16 @@ OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ARRAY_DIRS))
 SRCS += $(addprefix $(FT_ARRAY_DIR)/, $(FT_ARRAY_SRCS))
 # END FT_ARRAY
 
+# BEGIN FT_LEX
+FT_LEX_DIR = ft_lex
+FT_LEX_DIRS = $(FT_LEX_DIR)
+FT_LEX_SRCS = \
+	ft_lex_action_table__.c		ft_lex_action_table_to_dfa__.c
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_LEX_DIRS))
+SRCS += $(addprefix $(FT_LEX_DIR)/, $(FT_LEX_SRCS))
+# END FT_LEX
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
 
