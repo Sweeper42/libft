@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.h                                          :+:      :+:    :+:   */
+/*   ft_array_int64_dup.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/31 09:06:01 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:34:00 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/13 14:29:46 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/13 14:37:09 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SWAP_H
-# define FT_SWAP_H
+#include "ft_array.h"
+#include "ft_mem.h"
 
-# include <stdint.h>
-
-extern void		ft_swap_int(
-					int	*a,
-					int	*b);
-extern void		ft_swap_int64(
-					int64_t	*a,
-					int64_t	*b);
-
-extern void		ft_swap_ptr(
-					void	**a,
-					void	**b);
-
-#endif
+inline int			ft_array_int64_dup(
+				int64_t *array,
+				size_t size,
+				int64_t **r_target,
+				t_error_c **rrc_error)
+{
+	if (!(*r_target = (int64_t *)ft_memdup(array, size * sizeof(int64_t),
+											rrc_error)))
+		return (-1);
+	return (0);
+}

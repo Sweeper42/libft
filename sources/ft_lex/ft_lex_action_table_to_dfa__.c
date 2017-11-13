@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:24:32 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:26:30 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:35:56 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 #include "ft_mem.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-/*
-**typedef struct	s_input_data
-**{
-**	uint16_t	most_used_state;
-**	uint16_t	n;
-**}				t_input_data;
-*/
 
 static void				fill_state_point_table___(
 							uint16_t *r_state_point,

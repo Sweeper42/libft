@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 08:38:47 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:12:58 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:36:30 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@
 ** ft_lex
 ** ft_lex_create_dfa
 */
+
+typedef struct				s_input_data
+{
+	uint16_t				most_used_state;
+	uint16_t				n;
+}							t_input_data;
 
 typedef enum				e_lex_end_state
 {

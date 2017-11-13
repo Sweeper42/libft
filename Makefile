@@ -165,7 +165,7 @@ SRCS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_SRCS))
 # BEGIN FT_SWAP
 FT_SWAP_DIR = ft_swap
 FT_SWAP_SRCS = \
-	ft_swap_int.c	ft_swap_ptr.c
+	ft_swap_int.c	ft_swap_ptr.c	ft_swap_int64.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_SWAP_DIR))
 SRCS += $(addprefix $(FT_SWAP_DIR)/, $(FT_SWAP_SRCS))
@@ -177,7 +177,7 @@ FT_ARRAY_DIRS = $(FT_ARRAY_DIR)
 FT_ARRAY_SRCS = \
 	ft_int_array_bubble_sort.c	ft_int_array_heap_sort.c	ft_int_array_heap_sort_stat.c \
 	ft_int_array_fill_rand.c	ft_int_array_insertion_sort.c \
-	ft_array_int_dup.c
+	ft_array_int_dup.c			ft_array_int64_dup.c		ft_array_int64_heap_sort.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ARRAY_DIRS))
 SRCS += $(addprefix $(FT_ARRAY_DIR)/, $(FT_ARRAY_SRCS))
