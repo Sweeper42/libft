@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:12:11 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/07 11:37:12 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:01:12 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,19 @@ extern void		*ft_bzero(
 
 void			*ft_memdup(
 					void const	*src,
-					size_t		n);
+					size_t		n,
+					t_error_c	**rrc_error);
 
 void			*ft_realloc(
-					void	**mem_addr,
-					size_t	old_size,
-					size_t	new_size);
+					void		**mem_addr,
+					size_t		old_size,
+					size_t		new_size,
+					t_error_c	**rrc_error);
 extern void		*ft_reallocf(
-					void	**mem_addr,
-					size_t	old_size,
-					size_t	new_size);
+					void		**mem_addr,
+					size_t		old_size,
+					size_t		new_size,
+					t_error_c	**rrc_error);
 
 extern void		ft_memdel(void **to_del_addr);
 

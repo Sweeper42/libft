@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_remove.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/10 12:16:00 by nelson            #+#    #+#             */
-/*   Updated: 2017/10/11 17:40:36 by nelson           ###   ########.fr       */
+/*   Updated: 2017/11/13 14:24:12 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "ft_list.h"
 
 int			ft_list_remove(
-			t_list		*list,
-			t_iterator	*to_remove,
-			t_error_c	**error_addr)
+			t_list *list,
+			t_iterator *to_remove,
+			t_error_c **error_addr)
 {
 	t_list_elem		*to_del;
 

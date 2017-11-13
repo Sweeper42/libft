@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 08:00:49 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/07 11:36:05 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:13:11 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_ARRAY_H
 
 # include <stddef.h>
+# include "ft_error.h"
 # include "ft_bool.h"
 
 typedef struct	s_sort_stat
@@ -50,5 +51,11 @@ t_sort_stat		*ft_int_array_insertion_sort_stat(
 					int *array,
 					size_t n,
 					t_sort_stat *stat);
+
+extern int		ft_array_int_dup(
+					int			*array,
+					size_t		size,
+					int			**r_target,
+					t_error_c	**rrc_error);
 
 #endif

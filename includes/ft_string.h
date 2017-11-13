@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:51:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 16:07:23 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:10:59 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ extern size_t			ft_string_size(t_string_c *string);
 int						ft_string_reserve(
 							t_string	*string,
 							size_t		new_size,
-							t_error_c	**error_addr);
+							t_error_c	**rrc_error);
 
 /*
 **------------------------|         modifiers        |------------------------**

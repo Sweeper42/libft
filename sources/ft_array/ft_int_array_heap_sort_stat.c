@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 10:17:17 by nperrin           #+#    #+#             */
-/*   Updated: 2017/05/31 10:22:36 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:15:20 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ static inline void		heapify___(
 	}
 }
 
-t_sort_stat		*ft_int_array_heap_sort_stat(
-					int *array,
-					size_t n,
-					t_sort_stat *stat)
+t_sort_stat				*ft_int_array_heap_sort_stat(
+							int *array,
+							size_t n,
+							t_sort_stat *stat)
 {
 	size_t	i;
 
@@ -85,4 +85,3 @@ t_sort_stat		*ft_int_array_heap_sort_stat(
 	}
 	return (stat);
 }
-

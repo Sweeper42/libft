@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:44:51 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/10 16:13:41 by nelson           ###   ########.fr       */
+/*   Updated: 2017/11/13 14:25:02 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int			ft_list_init(
 		&& (!handler->dup || !handler->delete))
 	{
 		if (error_addr)
-			*error_addr = ft_list_error_invalid_ref(); 
+			*error_addr = ft_list_error_invalid_ref();
 		return (-1);
 	}
 	to_init->size = 0;

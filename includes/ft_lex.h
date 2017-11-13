@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 08:38:47 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/07 12:47:17 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:12:58 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ t_lex_dfa					*ft_lex_create_dfa(
 								t_lex_dfa_def_c	dfa_def,
 								t_error_c		*rrc_error);
 
-t_lext_action_table 		*ft_lex_get_action_table__(void);
-
+t_lext_action_table			*ft_lex_get_action_table__(void);
 
 int							ft_lex_action_table_to_dfa__(
 								t_lext_action_table		*r_action_table,

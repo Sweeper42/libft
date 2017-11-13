@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 08:15:23 by nperrin           #+#    #+#             */
-/*   Updated: 2017/05/31 09:11:26 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:14:43 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "ft_swap.h"
 #include "ft_mem.h"
 
-void		ft_int_array_bubble_sort(
-				int *array,
-				size_t n)
+void			ft_int_array_bubble_sort(
+					int *array,
+					size_t n)
 {
 	t_bool	sorted;
 	size_t	i;
