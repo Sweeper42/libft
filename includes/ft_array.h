@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 08:00:49 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:35:25 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 15:14:16 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,9 @@ extern int		ft_array_int64_dup(
 					size_t		size,
 					int64_t			**r_target,
 					t_error_c	**rrc_error);
+
+void			ft_array_int64_heap_sort(
+					int64_t		*array,
+					size_t		n);
 
 #endif
