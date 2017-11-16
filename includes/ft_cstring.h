@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:50:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:07:45 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/16 12:08:53 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,15 @@ extern char			*ft_strndup(
 						size_t		n,
 						t_error_c	**rrc_error);
 
-char				*ft_strchr(
+extern char			*ft_strchr(
 						char	*s,
 						int		c);
+extern size_t		ft_strspn(
+						char const *s,
+						char const *char_set);
+extern size_t		ft_strcspn(
+						char const *s,
+						char const *char_set);
 
 int					ft_strcmp(
 						char const	*s1,

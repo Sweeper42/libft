@@ -34,7 +34,8 @@ FT_CSTRING_DIR = ft_cstring
 FT_CSTRING_SRCS = \
 	ft_strlen.c		ft_strcpy.c		ft_strchr.c \
 	ft_strdup.c		ft_strndup.c	ft_strcmp.c \
-	ft_strequal.c	ft_isdigit.c
+	ft_strequal.c	ft_isdigit.c	ft_strspn.c \
+	ft_strcspn.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_CSTRING_DIR))
 SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
@@ -165,7 +166,7 @@ SRCS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_SRCS))
 # BEGIN FT_SWAP
 FT_SWAP_DIR = ft_swap
 FT_SWAP_SRCS = \
-	ft_swap_int.c	ft_swap_ptr.c	ft_swap_int64.c
+	ft_swap_int.c	ft_swap_ptr.c	ft_swap_int64.c	ft_swap_size_t.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_SWAP_DIR))
 SRCS += $(addprefix $(FT_SWAP_DIR)/, $(FT_SWAP_SRCS))

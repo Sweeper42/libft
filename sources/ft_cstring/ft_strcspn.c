@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:46:32 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 12:06:17 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/16 12:07:58 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 12:12:27 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cstring.h"
 
-inline char		*ft_strchr(
-					char *s,
-					int c)
+inline size_t		ft_strcspn(
+						char const *s,
+						char const *char_set)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != (char)c)
+	while (s[i] && !ft_strchr((char *)char_set, s[i]))
 		i++;
-	return (s[i] ? (s + i) : NULL);
+	return (i);
 }

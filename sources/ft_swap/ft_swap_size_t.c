@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_swap_size_t.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:46:32 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 12:06:17 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/13 15:36:46 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 12:13:39 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cstring.h"
+#include "ft_swap.h"
 
-inline char		*ft_strchr(
-					char *s,
-					int c)
+inline void		ft_swap_size_t(
+					size_t *a,
+					size_t *b)
 {
-	size_t	i;
+	size_t		tmp;
 
-	i = 0;
-	while (s[i] && s[i] != (char)c)
-		i++;
-	return (s[i] ? (s + i) : NULL);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
