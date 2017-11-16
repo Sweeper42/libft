@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:50:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 12:08:53 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/16 12:41:00 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ extern char			*ft_strndup(
 extern char			*ft_strchr(
 						char	*s,
 						int		c);
+extern char			*ft_strpbrk(
+						char const *s,
+						char const *char_set);
 extern size_t		ft_strspn(
 						char const *s,
 						char const *char_set);
@@ -49,5 +52,6 @@ t_bool				ft_strequal(
 						char const	*s2);
 
 extern t_bool		ft_isdigit(int c);
+extern t_bool		ft_isblank(int c);
 
 #endif
