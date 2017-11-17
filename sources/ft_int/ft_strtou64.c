@@ -6,12 +6,11 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 15:45:16 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/17 15:52:58 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/17 16:03:04 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_int.h"
-#include <stdio.h>
 #include "ft_cstring.h"
 
 uint64_t		ft_strtou64(
