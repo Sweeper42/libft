@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:50:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 12:41:00 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/16 14:00:00 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,16 @@ extern size_t		ft_strcspn(
 						char const *s,
 						char const *char_set);
 
-int					ft_strcmp(
+extern int			ft_strcmp(
 						char const	*s1,
 						char const	*s2);
-t_bool				ft_strequal(
+extern t_bool		ft_strequal(
 						char const	*s1,
 						char const	*s2);
 
 extern t_bool		ft_isdigit(int c);
 extern t_bool		ft_isblank(int c);
-
+extern t_bool		ft_islower(int c);
+extern t_bool		ft_isupper(int c);
+extern int			ft_digittoint(int c);
 #endif
