@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 12:19:25 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 14:26:01 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/16 13:58:20 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 14:20:40 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cstring.h"
 
-inline t_bool	ft_isblank(int c)
+inline t_bool		ft_isupper(int c)
 {
-	return ((((char)c >= '\t') && ((char)c <= '\r'))
-		|| ((char)c == ' '));
+	return (((char)c >= 'A') && ((char)c <= 'Z'));
 }

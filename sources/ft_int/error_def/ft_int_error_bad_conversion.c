@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   ft_int_error_bad_conversion.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 12:19:25 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 14:26:01 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/16 13:09:37 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 14:26:22 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cstring.h"
+#include "ft_int.h"
 
-inline t_bool	ft_isblank(int c)
+static t_error_c	g_int_error_bad_conversion___ =
 {
-	return ((((char)c >= '\t') && ((char)c <= '\r'))
-		|| ((char)c == ' '));
+	FT_INT_ERROR_BAD_CONVERSION,
+	"Int: convertion impossible, value to big"
+};
+
+t_error_c	*ft_int_error_bad_conversion(void)
+{
+	return (&g_int_error_bad_conversion___);
 }

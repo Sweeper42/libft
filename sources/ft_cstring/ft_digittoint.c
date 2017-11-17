@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   ft_digittoint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 12:19:25 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 14:26:01 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/16 13:53:10 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 13:59:24 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cstring.h"
 
-inline t_bool	ft_isblank(int c)
+inline int		ft_digittoint(int c)
 {
-	return ((((char)c >= '\t') && ((char)c <= '\r'))
-		|| ((char)c == ' '));
+	if (ft_isdigit(c))
+		return ((char)c - '0');
+	else if (ft_islower(c))
+		return ((char)c - 'a' + 10);
+	else if (ft_isupper(c))
+		return ((char)c - 'A' + 10);
+	return (-1);
 }
