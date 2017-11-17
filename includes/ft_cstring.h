@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:50:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/16 14:00:00 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/17 16:04:23 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ extern t_bool		ft_isblank(int c);
 extern t_bool		ft_islower(int c);
 extern t_bool		ft_isupper(int c);
 extern int			ft_digittoint(int c);
+
 #endif
