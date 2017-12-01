@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_clean.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:50:31 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 18:53:38 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/22 20:11:21 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static inline int	check_param___(
 						t_bool delete_value,
 						t_error_c **error_addr)
 {
-	if (delete_value && !stack->handler->delete)
+	if (delete_value && !stack->handler->destroy)
 	{
 		*error_addr = ft_stack_error_no_delete();
 		return (-1);
@@ -41,7 +41,7 @@ int					ft_stack_clean(
 	while (cur)
 	{
 		if (delete_value &&
-			(stack->handler->delete(cur->value, error_addr) == -1))
+			(stack->handler->destroy(cur->value, error_addr) == -1))
 			return (-1);
 		prev = cur;
 		cur = cur->next;

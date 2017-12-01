@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:31:12 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/21 17:36:53 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/22 20:07:18 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ inline char		*ft_strndup(
 					char const *src,
 					size_t n)
 {
-	char	*new;
+	char	*new_str;
 	size_t	len;
 
 	if (n > (len = ft_strlen(src)))
 		n = len;
-	if (!(new = (char *)malloc(sizeof(char) * (n + 1))))
+	if (!(new_str = (char *)malloc(sizeof(char) * (n + 1))))
 		return (NULL);
-	new[n] = '\0';
-	return (ft_memcpy((void *)new, (void const *)src, n));
+	new_str[n] = '\0';
+	return ((char *)ft_memcpy((void *)new_str, (void const *)src, n));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string_new2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 19:05:53 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 16:57:56 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/22 20:09:50 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ t_string		*ft_string_new2(
 					t_sub_string sub_string,
 					t_error_c **error_addr)
 {
-	t_string	*new;
+	t_string	*new_str;
 
-	if (!(new = malloc(sizeof(t_string))))
+	if (!(new_str = (t_string *)malloc(sizeof(t_string))))
 	{
 		if (error_addr)
 			*error_addr = ft_error_bad_alloc();
 	}
-	else if (!ft_string_init2(new, src, sub_string, error_addr))
-		ft_memdel((void **)&new);
-	return (new);
+	else if (!ft_string_init2(new_str, src, sub_string, error_addr))
+		ft_memdel((void **)&new_str);
+	return (new_str);
 }

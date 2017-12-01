@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string_init2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 18:27:55 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/22 16:55:42 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/22 20:08:45 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_string		*ft_string_init2(
 	if (ft_string_check_sub_string__(src, &sub_string, error_addr) == -1)
 		return (NULL);
 	alloc_size = FT_STRING_GET_MARGIN(sub_string.len + 1);
-	if (!(to_init->str = malloc(sizeof(char) * alloc_size)))
+	if (!(to_init->str = (char *)malloc(sizeof(char) * alloc_size)))
 	{
 		if (error_addr)
 			*error_addr = ft_error_bad_alloc();

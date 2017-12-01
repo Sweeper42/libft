@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 17:20:02 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 19:06:55 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/22 20:12:32 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ int			ft_stack_push(
 				void *value,
 				t_error_c **error_addr)
 {
-	t_stack_elem	*new;
+	t_stack_elem	*new_elem;
 
-	if (!(new = malloc(sizeof(t_stack_elem))))
+	if (!(new_elem = (t_stack_elem *)malloc(sizeof(t_stack_elem))))
 	{
 		if (error_addr)
 			*error_addr = ft_error_bad_alloc();
 		return (-1);
 	}
-	new->value = value;
-	new->next = stack->top;
-	stack->top = new;
+	new_elem->value = value;
+	new_elem->next = stack->top;
+	stack->top = new_elem;
 	stack->size++;
 	return (0);
 }

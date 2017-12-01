@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_var_handling.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 16:53:45 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/23 17:06:55 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/10/22 20:08:15 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct					s_var_handler
 									void const *,
 									void *,
 									t_error_c **);
-	int							(*delete)(
+	int							(*destroy)(
 									void *,
 									t_error_c **);
 	t_bool						(*equal)(

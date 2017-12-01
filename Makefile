@@ -1,7 +1,7 @@
 
 NAME = libft.a
 
-CC = clang
+CC = g++
 
 SRC_DIR = sources
 INC_DIR = includes
