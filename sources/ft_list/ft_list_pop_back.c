@@ -6,7 +6,7 @@
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 19:13:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/10 13:47:46 by nelson           ###   ########.fr       */
+/*   Updated: 2017/12/01 11:12:58 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int					ft_list_pop_back(
 
 	to_del = list->last.prev;
 	if (FT_LIST_IS_BY_VALUE(*list)
-		&& (list->handler->delete(to_del->value, error_addr) == -1))
+		&& (list->handler->destroy(to_del->value, error_addr) == -1))
 		return (-1);
 	list->last.prev = to_del->prev;
 	to_del->prev->next = &list->last;

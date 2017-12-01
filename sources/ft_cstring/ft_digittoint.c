@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_digittoint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 17:28:02 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:08:43 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/16 13:53:10 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 13:59:24 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cstring.h"
-#include "ft_mem.h"
 
-inline char		*ft_strdup(
-					char const *src,
-					t_error_c **rrc_error)
+inline int		ft_digittoint(int c)
 {
-	return ((char *)ft_memdup(
-		(void const *)src,
-		ft_strlen(src) + 1,
-		rrc_error));
+	if (ft_isdigit(c))
+		return ((char)c - '0');
+	else if (ft_islower(c))
+		return ((char)c - 'a' + 10);
+	else if (ft_isupper(c))
+		return ((char)c - 'A' + 10);
+	return (-1);
 }

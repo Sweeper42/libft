@@ -6,7 +6,7 @@
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 18:10:55 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/22 20:08:03 by nelson           ###   ########.fr       */
+/*   Updated: 2017/12/01 11:10:57 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 void			*ft_realloc(
 					void **mem_addr,
 					size_t old_size,
-					size_t new_size)
+					size_t new_size,
+					t_error_c **rrc_error)
 {
 	void	*new_mem;
 	size_t	cpy_size;
@@ -25,7 +26,7 @@ void			*ft_realloc(
 		return (*mem_addr);
 	if (new_size > 0)
 	{
-		if (!(new_mem = malloc(sizeof(new_size) * sizeof(char))))
+		if (!(new_mem = ft_memalloc(sizeof(new_size) * sizeof(char), rrc_error)))
 			return (NULL);
 		cpy_size = (old_size > new_size) ? new_size : old_size;
 		ft_memcpy(new_mem, *mem_addr, cpy_size);

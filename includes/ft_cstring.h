@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:50:38 by nperrin           #+#    #+#             */
-/*   Updated: 2017/03/27 17:14:32 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/17 16:04:23 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include "ft_bool.h"
+# include "ft_error.h"
 
 extern size_t		ft_strlen(char const *s);
 
@@ -22,22 +23,38 @@ extern char			*ft_strcpy(
 						char		*dst,
 						char const *src);
 
-extern char			*ft_strdup(char const *src);
+extern char			*ft_strdup(
+						char const	*src,
+						t_error_c	**rrc_error);
 extern char			*ft_strndup(
 						char const	*src,
-						size_t		n);
+						size_t		n,
+						t_error_c	**rrc_error);
 
-char				*ft_strchr(
+extern char			*ft_strchr(
 						char	*s,
 						int		c);
+extern char			*ft_strpbrk(
+						char const *s,
+						char const *char_set);
+extern size_t		ft_strspn(
+						char const *s,
+						char const *char_set);
+extern size_t		ft_strcspn(
+						char const *s,
+						char const *char_set);
 
-int					ft_strcmp(
+extern int			ft_strcmp(
 						char const	*s1,
 						char const	*s2);
-t_bool				ft_strequal(
+extern t_bool		ft_strequal(
 						char const	*s1,
 						char const	*s2);
 
 extern t_bool		ft_isdigit(int c);
+extern t_bool		ft_isblank(int c);
+extern t_bool		ft_islower(int c);
+extern t_bool		ft_isupper(int c);
+extern int			ft_digittoint(int c);
 
 #endif

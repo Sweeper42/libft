@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_swap_size_t.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 17:28:02 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:08:43 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/13 15:36:46 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 12:13:39 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cstring.h"
-#include "ft_mem.h"
+#include "ft_swap.h"
 
-inline char		*ft_strdup(
-					char const *src,
-					t_error_c **rrc_error)
+inline void		ft_swap_size_t(
+					size_t *a,
+					size_t *b)
 {
-	return ((char *)ft_memdup(
-		(void const *)src,
-		ft_strlen(src) + 1,
-		rrc_error));
+	size_t		tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

@@ -6,11 +6,11 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 16:04:19 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/18 16:13:44 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:21:48 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_map.h"
+#include "ft_map.h"
 
 static t_error_c	g_map_error_invalid_init =
 {

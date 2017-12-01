@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 17:28:02 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:08:43 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/16 12:00:58 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/16 12:12:38 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cstring.h"
-#include "ft_mem.h"
 
-inline char		*ft_strdup(
-					char const *src,
-					t_error_c **rrc_error)
+inline size_t		ft_strspn(
+						char const *s,
+						char const *char_set)
 {
-	return ((char *)ft_memdup(
-		(void const *)src,
-		ft_strlen(src) + 1,
-		rrc_error));
+	size_t	i;
+
+	i = 0;
+	while (s[i] && ft_strchr((char *)char_set, s[i]))
+		i++;
+	return (i);
 }

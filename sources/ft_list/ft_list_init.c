@@ -6,7 +6,7 @@
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:44:51 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/10 16:13:41 by nelson           ###   ########.fr       */
+/*   Updated: 2017/12/01 11:12:00 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int			ft_list_init(
 	to_init->flags = flags;
 	to_init->handler = handler;
 	if (FT_LIST_IS_BY_VALUE(*to_init)
-		&& (!handler->dup || !handler->delete))
+		&& (!handler->dup || !handler->destroy))
 	{
 		if (error_addr)
-			*error_addr = ft_list_error_invalid_ref(); 
+			*error_addr = ft_list_error_invalid_ref();
 		return (-1);
 	}
 	to_init->size = 0;

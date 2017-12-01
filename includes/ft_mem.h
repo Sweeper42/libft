@@ -6,7 +6,7 @@
 /*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:12:11 by nperrin           #+#    #+#             */
-/*   Updated: 2017/10/22 20:06:16 by nelson           ###   ########.fr       */
+/*   Updated: 2017/12/01 11:05:17 by nelson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_MEM_H
 
 # include <stddef.h>
+# include "ft_error.h"
 
 extern void		*ft_memchr(
 					void	*m,
@@ -34,17 +35,29 @@ extern void		*ft_bzero(
 
 void			*ft_memdup(
 					void const	*src,
-					size_t		n);
+					size_t		n,
+					t_error_c	**rrc_error);
 
 void			*ft_realloc(
-					void	**mem_addr,
-					size_t	old_size,
-					size_t	new_size);
+					void		**mem_addr,
+					size_t		old_size,
+					size_t		new_size,
+					t_error_c	**rrc_error);
 extern void		*ft_reallocf(
-					void	**mem_addr,
-					size_t	old_size,
-					size_t	new_size);
+					void		**mem_addr,
+					size_t		old_size,
+					size_t		new_size,
+					t_error_c	**rrc_error);
 
 extern void		ft_memdel(void **to_del_addr);
+
+extern void		*ft_memcalloc(
+					size_t		n,
+					size_t		size,
+					t_error_c	**rrc_error);
+
+extern void		*ft_memalloc(
+					size_t		n,
+					t_error_c	**rrc_error);
 
 #endif

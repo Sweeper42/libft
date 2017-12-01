@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:51:18 by nperrin           #+#    #+#             */
-/*   Updated: 2017/04/19 15:26:27 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/17 15:59:04 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,9 @@ extern char const		*ft_error_get_why(t_error_c *error);
 t_error_c				*ft_error_bad_alloc(void);
 t_error_c				*ft_error_bad_fd(void);
 t_error_c				*ft_error_no_dup(void);
+
+extern void				ft_error_set_to(
+							t_error_c	**rrc_error,
+							t_error_c	*rc_error);
 
 #endif

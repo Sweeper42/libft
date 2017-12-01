@@ -6,7 +6,7 @@
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 10:48:35 by nperrin           #+#    #+#             */
-/*   Updated: 2017/05/31 11:08:15 by nperrin          ###   ########.fr       */
+/*   Updated: 2017/11/13 14:14:56 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "ft_mem.h"
 #include "ft_swap.h"
 
-void		ft_int_array_insertion_sort(
-				int *array,
-				size_t n)
+void			ft_int_array_insertion_sort(
+					int *array,
+					size_t n)
 {
 	size_t		i;
 	size_t		j;

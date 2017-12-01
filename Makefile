@@ -1,7 +1,7 @@
 
 NAME = libft.a
 
-CC = g++
+CC = gcc
 
 SRC_DIR = sources
 INC_DIR = includes
@@ -14,7 +14,7 @@ CFLAGS = -Wall -Werror -Wextra -MMD -O2
 FT_ERROR_DIR = ft_error
 FT_ERROR_DIRS = $(FT_ERROR_DIR)
 FT_ERROR_SRCS = \
-	ft_error_get_err_num.c		ft_error_get_why.c
+	ft_error_get_err_num.c		ft_error_get_why.c	ft_error_set_to.c
 
 #  BEGIN FT_ERROR_ERROR_DEF
 FT_ERROR_ERROR_DEF_DIR = error_def
@@ -34,8 +34,9 @@ FT_CSTRING_DIR = ft_cstring
 FT_CSTRING_SRCS = \
 	ft_strlen.c		ft_strcpy.c		ft_strchr.c \
 	ft_strdup.c		ft_strndup.c	ft_strcmp.c \
-	ft_strequal.c	ft_isdigit.c
-
+	ft_strequal.c	ft_isdigit.c	ft_strspn.c \
+	ft_strcspn.c	ft_isblank.c	ft_strpbrk.c \
+	ft_isupper.c	ft_islower.c	ft_digittoint.c
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_CSTRING_DIR))
 SRCS += $(addprefix $(FT_CSTRING_DIR)/, $(FT_CSTRING_SRCS))
 # END FT_CSTRING
@@ -45,7 +46,8 @@ FT_MEM_DIR = ft_mem
 FT_MEM_SRCS = \
 	ft_memchr.c		ft_memcpy.c		ft_memdup.c \
 	ft_memset.c		ft_bzero.c		ft_memdel.c \
-	ft_realloc.c	ft_reallocf.c
+	ft_realloc.c	ft_reallocf.c	ft_memalloc.c \
+	ft_memcalloc.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_MEM_DIR))
 SRCS += $(addprefix $(FT_MEM_DIR)/, $(FT_MEM_SRCS))
@@ -164,7 +166,7 @@ SRCS += $(addprefix $(FT_ITERATOR_DIR)/, $(FT_ITERATOR_SRCS))
 # BEGIN FT_SWAP
 FT_SWAP_DIR = ft_swap
 FT_SWAP_SRCS = \
-	ft_swap_int.c
+	ft_swap_int.c	ft_swap_ptr.c	ft_swap_int64.c	ft_swap_size_t.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_SWAP_DIR))
 SRCS += $(addprefix $(FT_SWAP_DIR)/, $(FT_SWAP_SRCS))
@@ -175,11 +177,42 @@ FT_ARRAY_DIR = ft_array
 FT_ARRAY_DIRS = $(FT_ARRAY_DIR)
 FT_ARRAY_SRCS = \
 	ft_int_array_bubble_sort.c	ft_int_array_heap_sort.c	ft_int_array_heap_sort_stat.c \
-	ft_int_array_fill_rand.c	ft_int_array_insertion_sort.c
+	ft_int_array_fill_rand.c	ft_int_array_insertion_sort.c \
+	ft_array_int_dup.c			ft_array_int64_dup.c		ft_array_int64_heap_sort.c
 
 OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_ARRAY_DIRS))
 SRCS += $(addprefix $(FT_ARRAY_DIR)/, $(FT_ARRAY_SRCS))
 # END FT_ARRAY
+
+# BEGIN FT_INT
+FT_INT_DIR = ft_int
+FT_INT_DIRS = $(FT_INT_DIR)
+FT_INT_SRCS = \
+	int_skip_space__.c		ft_strtou64.c		ft_strtoi64.c \
+	ft_strtou.c				ft_strtoi.c
+
+# BEGIN FT_INT_ERROR_DEF
+FT_INT_ERROR_DEF_DIR = error_def
+FT_INT_ERROR_DEF_SRCS = \
+	ft_int_error_bad_conversion.c
+
+FT_INT_DIRS += $(addprefix  $(FT_INT_DIR)/,$(FT_INT_ERROR_DEF_DIR))
+FT_INT_SRCS += $(addprefix $(FT_INT_ERROR_DEF_DIR)/, $(FT_INT_ERROR_DEF_SRCS))
+# END FT_INT_ERROR_DEF
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_INT_DIRS))
+SRCS += $(addprefix $(FT_INT_DIR)/, $(FT_INT_SRCS))
+# END FT_INT
+
+# BEGIN FT_LEX
+FT_LEX_DIR = ft_lex
+FT_LEX_DIRS = $(FT_LEX_DIR)
+FT_LEX_SRCS = \
+	ft_lex_action_table__.c		ft_lex_action_table_to_dfa__.c
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_LEX_DIRS))
+SRCS += $(addprefix $(FT_LEX_DIR)/, $(FT_LEX_SRCS))
+# END FT_LEX
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)

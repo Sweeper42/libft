@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 17:28:02 by nperrin           #+#    #+#             */
-/*   Updated: 2017/11/13 14:08:43 by nperrin          ###   ########.fr       */
+/*   Created: 2017/11/07 11:28:41 by nperrin           #+#    #+#             */
+/*   Updated: 2017/11/07 11:44:37 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cstring.h"
+#include <stdlib.h>
 #include "ft_mem.h"
 
-inline char		*ft_strdup(
-					char const *src,
+inline void		*ft_memalloc(
+					size_t n,
 					t_error_c **rrc_error)
 {
-	return ((char *)ft_memdup(
-		(void const *)src,
-		ft_strlen(src) + 1,
-		rrc_error));
+	void	*mem;
+
+	if (!(mem = malloc(n)))
+	{
+		if (rrc_error)
+			*rrc_error = ft_error_bad_alloc();
+	}
+	return (mem);
 }
