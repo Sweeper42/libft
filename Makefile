@@ -214,6 +214,37 @@ OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_LEX_DIRS))
 SRCS += $(addprefix $(FT_LEX_DIR)/, $(FT_LEX_SRCS))
 # END FT_LEX
 
+# BEGIN FT_SET
+FT_SET_DIR = ft_set
+FT_SET_DIRS = $(FT_SET_DIR)
+FT_SET_SRCS =
+
+#  BEGIN FT_SET_ERROR
+FT_SET_ERROR_DIR = ft_set_error
+FT_SET_ERROR_SRCS = \
+	ft_set_error_duplicate_elem.c	ft_set_error_extending_4_leaf_node.c \
+	ft_set_error_merge_with_invalid_child.c
+FT_SET_DIRS += $(addprefix $(FT_SET_DIR)/, $(FT_SET_ERROR_DIR))
+FT_SET_SRCS += $(addprefix $(FT_SET_ERROR_DIR)/, $(FT_SET_ERROR_SRCS))
+#  END FT_SET_ERROR
+
+#  BEGIN FT_SET_
+FT_SET__DIR = ft_set_
+FT_SET__DIRS = $(FT_SET__DIR)
+FT_SET__SRCS = \
+	ft_set_2_intern_node_create__.c		ft_set_2_leaf_node_create__.c \
+	ft_set_2_leaf_node_extend__.c		ft_set_3_leaf_node_extend__.c \
+	ft_set_leaf_node_extend__.c			ft_set_2_intern_node_merge_with_child__.c \
+	ft_set_3_intern_node_merge_with_child__.c \
+	ft_set_intern_node_merge_with_child__.c
+FT_SET_DIRS += $(addprefix $(FT_SET_DIR)/, $(FT_SET__DIRS))
+FT_SET_SRCS += $(addprefix $(FT_SET__DIR)/, $(FT_SET__SRCS))
+#  END FT_SET_
+
+OBJ_DIRS += $(addprefix $(OBJ_DIR)/, $(FT_SET_DIRS))
+SRCS += $(addprefix $(FT_SET_DIR)/, $(FT_SET_SRCS))
+# END_FT_SET
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRCS))))
 all: $(NAME)
 
