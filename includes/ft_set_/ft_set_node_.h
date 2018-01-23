@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_node_structures_.h                          :+:      :+:    :+:   */
+/*   ft_set_node_.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nelson <nelson@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nperrin <nperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 11:07:32 by nelson            #+#    #+#             */
-/*   Updated: 2017/12/10 17:29:45 by nelson           ###   ########.fr       */
+/*   Updated: 2018/01/22 14:34:34 by nperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,14 @@ union							u_set_node
 	t_s_set_leaf_node			s_leaf_node;
 };
 
+t_s_set_leaf_node				*ft_set_node_create_leaf_2node__(
+									void const		*pcov_elem,
+									t_u_set_node	*pu_parent,
+									t_error_c		**hcos_error);
+
+t_s_set_intern_node				*ft_set_node_create_intern_2node__(
+									void const		*pcov_elem,
+									t_u_set_node	*arpu_child[2],
+									t_u_set_node	*pu_parent,
+									t_error_c		**hcos_error);
 #endif
